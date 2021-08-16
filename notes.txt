@@ -1,0 +1,16 @@
+  "background": {
+    "service_worker": "background.js"
+  },
+  for manifest under manifest version
+  under background 
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting",
+    "*://*.coursevania.com/*",
+    "*://*.icontricks.tech/*",
+    "*://*.udemy.com/*",
+    "*://*.getintocourse.com/*",
+    "*://*.udemy.com/*",
+    "*://www.udemy.com/*"
+  ],

@@ -1,0 +1,79 @@
+{
+  "name": "Getting Started Example",
+  "description": "Build an Extension!",
+  "version": "1.0",
+  "manifest_version": 3,
+  "background": {
+    "background.service_worker": [
+      "redirect.js",
+      "background.js",
+      "reorder.js"
+    ]
+  },
+  
+  "host_permissions": [
+    "https://extension.ninja/*",
+    "https://www.udemy.com/*",
+    "https://www.getintocourse.com/*",
+    "https://www.coursevania.com/*",
+    "https://www.icontricks.tech/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "/images/get_started16.png",
+      "32": "/images/get_started32.png",
+      "48": "/images/get_started48.png",
+      "128": "/images/get_started128.png"
+    }
+  },
+  "icons": {
+    "16": "/images/get_started16.png",
+    "32": "/images/get_started32.png",
+    "48": "/images/get_started48.png",
+    "128": "/images/get_started128.png"
+  },
+  "options_page": "options.html",
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.coursevania.com/*"
+      ],
+      "js": [
+        "reorder.js",
+        "redirect.js"
+      ],
+      "run_at": "document_end"
+    },
+    {
+      "matches": [
+        "*://*.getintocourse.com/*"
+      ],
+      "js": [
+        "reorder.js",
+        "redirect.js"
+      ],
+      "run_at": "document_end"
+    },
+    {
+      "matches": [
+        "*://*.icontricks.tech/*"
+      ],
+      "js": [
+        "reorder.js",
+        "redirect.js"
+      ],
+      "run_at": "document_end"
+    },
+    {
+      "matches": [
+        "*://*.udemy.com/*"
+      ],
+      "js": [
+        "reorder.js",
+        "redirect.js"
+      ],
+      "run_at": "document_end"
+    }
+  ]
+}
