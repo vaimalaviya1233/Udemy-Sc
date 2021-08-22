@@ -21,6 +21,7 @@ function reorder(url) {
     }
 }
 function getcouponscorpion(){
+    wait(5000);
     coupon = document.querySelector("#post-171638 > div.disablemobileborder.single_top_postproduct.pt20.pb20.border-top.border-grey-bottom.mb30.flowhidden.clearfix > div.right_st_postproduct.floatright.mobileblockdisplay > div > span.rh_button_wrapper > a");
     if (coupon != null) {
         window.location.assign(coupon.href);
