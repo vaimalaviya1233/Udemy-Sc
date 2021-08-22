@@ -1,7 +1,7 @@
 {
-  "name": "Getting Started Example",
-  "description": "Build an Extension!",
-  "version": "1.0",
+  "name": "Udemy Enroller",
+  "description": "Auto redirects page of coupon site to udemy site",
+  "version": "1.1",
   "manifest_version": 3,
   "background": {
     "background.service_worker": [
@@ -16,6 +16,7 @@
     "https://www.udemy.com/*",
     "https://www.getintocourse.com/*",
     "https://www.coursevania.com/*",
+    "https://www.couponscorpion.com/*",
     "https://www.icontricks.tech/*"
   ],
   "action": {
@@ -58,6 +59,15 @@
     {
       "matches": [
         "*://*.icontricks.tech/*"
+      ],
+      "js": [
+        "reorder.js",
+        "redirect.js"
+      ],
+      "run_at": "document_end"
+    },    {
+      "matches": [
+        "*://*.couponscorpion.com/*"
       ],
       "js": [
         "reorder.js",
