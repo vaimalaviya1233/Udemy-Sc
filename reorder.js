@@ -13,10 +13,20 @@ function reorder(url) {
         case "udemy.com":
             udemy();
             break;
+        case "couponscorpion.com":
+            getcouponscorpion();
+            break;
         default:
             break;
     }
 }
+function getcouponscorpion(){
+    coupon = document.querySelector("#post-171638 > div.disablemobileborder.single_top_postproduct.pt20.pb20.border-top.border-grey-bottom.mb30.flowhidden.clearfix > div.right_st_postproduct.floatright.mobileblockdisplay > div > span.rh_button_wrapper > a");
+    if (coupon != null) {
+        window.location.assign(coupon.href);
+    }
+}
+
 function getintocourse() {
     //getintocourse.com
     let re_track_btn = document.getElementsByClassName('re_track_btn');
