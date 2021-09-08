@@ -4,7 +4,7 @@ var url_array = url.split("/");// output is ['https:', '', 'icontricks.tech', ''
 var basicurl = url_array[2];//output should be icontricks.tech;
 // console.log(basicurl);
 // var absolutesite = ["https://icontricks.tech/", "https://coursevania.com", "https://getintocourse.com/"];
-var sites = ["icontricks.tech", "coursevania.com", "getintocourse.com", "udemy.com", "couponscorpion.com"];
+var sites = ["icontricks.tech", "coursevania.com", "getintocourse.com", "udemy.com", "couponscorpion.com","all-ebook.info","filebonus.net","zerocost.co.in"];
 
 for (var i = 0; i < sites.length; i++) {
     if (sites[i] == basicurl) {

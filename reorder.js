@@ -16,16 +16,54 @@ function reorder(url) {
         case "couponscorpion.com":
             getcouponscorpion();
             break;
+        case "all-ebook.info":
+            allebook();
+            break;
+        case "filebonus.net":
+            filebonus();
+            break;
+        case "zerocost.co.in":
+            zerocost();
+            break;
         default:
             break;
     }
 }
-function getcouponscorpion(){
-    wait(5000);
+function getcouponscorpion() {
+    //couponscorpion.com
+    setTimeout(8000);
     coupon = document.querySelector("#post-171638 > div.disablemobileborder.single_top_postproduct.pt20.pb20.border-top.border-grey-bottom.mb30.flowhidden.clearfix > div.right_st_postproduct.floatright.mobileblockdisplay > div > span.rh_button_wrapper > a");
     if (coupon != null) {
-        window.location.assign(coupon.href);
+        window.location.assign(coupon["href"]);
     }
+    wait(2000);
+    udemy();
+}
+
+function filebonus() {
+    //filebonus.net
+    var firstredirect = document.querySelector("#container > div > div.row > div > form > table > tbody > tr > td:nth-child(2) > center > input[type=submit]");
+    var secondredirect = document.querySelector("#downloadbtn");
+    if (firstredirect != null) {
+        firstredirect.click();
+    }else if(secondredirect != null){
+        setTimeout(16000);
+        secondredirect.click();
+    }else{
+        let link = document.querySelector("#container > div.container.download_page.pt30 > div > div.col-md-8 > div.link_generated > div > center > h5 > font > b > a");
+        
+        alert("nothing found");
+        setTimeout(5000);
+    }
+    
+}
+
+function allebook() {
+    //all-ebook.info
+    setTimeout(1000);
+    let href = document.querySelector("#dle-content > article > div.screenshots-full > div.std-block-title2 > div > p > strong > a");
+    window.location.assign(href["href"]);
+
 }
 
 function getintocourse() {
@@ -55,6 +93,8 @@ function getintocourse() {
         alert('non exist');
         console.log("nothing found");
     }
+    wait(2000);
+    udemy();
 }
 
 function udemy() {
@@ -72,6 +112,8 @@ function udemy() {
 function coursevania() {
     //coursevania.com
     window.location.assign(document.getElementsByClassName('no-price')[0]["href"]);
+    wait(2000);
+    udemy();
 }
 
 function icontricks() {
@@ -94,6 +136,31 @@ function icontricks() {
             window.location.assign(document.querySelector(selectors[i])["href"]);
         }
     }
+    wait(2000);
+    udemy();
+}
+function zerocost() {
+    //zerocost.co.in
+    //checks if element exists by document.querySelector
+    function elementExists(selector) {
+        return document.querySelector(selector) != null;
+    }
+
+    function getLink(el) {
+        var link = el.getAttribute("href");
+        return link;
+    }
+    
+    var selectors = ["#post-1144 > div.post-content > center > button > a","#post-1228 > div.post-content > center > button > a","#post-1232 > div.post-content > center > button > a","#post-1234 > div.post-content > center > button > a","#post-1238 > div.post-content > center > button > a","#post-1242 > div.post-content > center > button > a","#post-1247 > div.post-content > center > button > a","#post-1245 > div.post-content > center > button > a","#post-1249 > div.post-content > center > button > a","#post-1251 > div.post-content > center > button > a","#post-1253 > div.post-content > center > button > a","#post-1148 > div.post-content > center > button > a","#post-1152 > div.post-content > center > button > a","#post-1171 > div.post-content > center > button > a","#post-1173 > div.post-content > center > button > a","#post-1159 > div.post-content > center > button > a","#post-1161 > div.post-content > center > button > a","#post-1165 > div.post-content > center > button > a","#post-1167 > div.post-content > center > button > a","#post-1169 > div.post-content > center > button > a","#post-1155 > div.post-content > center > button > a","#post-1157 > div.post-content > center > button > a","#post-1179 > div.post-content > center > button > a","#post-1146 > div.post-content > center > button > a","#the-post > div.entry-content.entry.clearfix > center > button > a", "#the-post > div.entry-content.entry.clearfix > center > button > a", "#the-post > div.entry-content.entry.clearfix > center > button > a", "#the-post > div.entry-content.entry.clearfix > center > button > a","#post-1150 > div.post-content > center > button > a"];
+
+    for (var i = 0; i < selectors.length; i++) {
+        if (elementExists(selectors[i])) {
+            console.log(selectors[i]);
+            window.location.assign(document.querySelector(selectors[i])["href"]);
+        }
+    }
+    wait(2000);
+    udemy();
 }
 
 

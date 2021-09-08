@@ -1,7 +1,7 @@
 {
   "name": "Udemy Enroller",
   "description": "Auto redirects page of coupon site to udemy site",
-  "version": "1.1",
+  "version": "1.2",
   "manifest_version": 3,
   "background": {
     "background.service_worker": [
@@ -10,13 +10,23 @@
       "reorder.js"
     ]
   },
-  
+  "content_security_policy": {
+    "default-src" : "script-src 'unsafe-inline' 'self' 'unsafe-hashes'",
+    "script-src" : "script-src 'self' 'unsafe-eval' 'unsafe-inline' 'unsafe-hashes' 'redirect.js' 'reorder.js' 'background.js'",
+    "redirect.js" : "script-src 'self' 'unsafe-eval' 'unsafe-inline' 'unsafe-hashes'",
+    "background.js" : "script-src 'self' 'unsafe-eval' 'unsafe-inline' 'unsafe-hashes'",
+    "reorder.js" : "script-src 'self' 'unsafe-eval' 'unsafe-inline' 'unsafe-hashes'"
+  },
   "host_permissions": [
     "https://extension.ninja/*",
     "https://www.udemy.com/*",
     "https://www.getintocourse.com/*",
     "https://www.coursevania.com/*",
     "https://www.couponscorpion.com/*",
+    "https://www.all-ebook.info/*",
+    "https://www.filebonus.net/*",
+    "http://www.filebonus.net/*",
+    "http://www.zerocost.co.in/*",
     "https://www.icontricks.tech/*"
   ],
   "action": {
@@ -38,46 +48,16 @@
   "content_scripts": [
     {
       "matches": [
+        "*://filebonus.net/*",
+        "*://www.filebonus.net/*",
+        "*://*.filebonus.net/*",
+        "*://*.udemy.com/*",
+        "*://*.couponscorpion.com/*",
+        "*://*.icontricks.tech/*",
+        "*://*.all-ebook.info/*",
+        "*://*.getintocourse.com/*",
+        "*://*.zerocost.co.in/*",
         "*://*.coursevania.com/*"
-      ],
-      "js": [
-        "reorder.js",
-        "redirect.js"
-      ],
-      "run_at": "document_end"
-    },
-    {
-      "matches": [
-        "*://*.getintocourse.com/*"
-      ],
-      "js": [
-        "reorder.js",
-        "redirect.js"
-      ],
-      "run_at": "document_end"
-    },
-    {
-      "matches": [
-        "*://*.icontricks.tech/*"
-      ],
-      "js": [
-        "reorder.js",
-        "redirect.js"
-      ],
-      "run_at": "document_end"
-    },    {
-      "matches": [
-        "*://*.couponscorpion.com/*"
-      ],
-      "js": [
-        "reorder.js",
-        "redirect.js"
-      ],
-      "run_at": "document_end"
-    },
-    {
-      "matches": [
-        "*://*.udemy.com/*"
       ],
       "js": [
         "reorder.js",
