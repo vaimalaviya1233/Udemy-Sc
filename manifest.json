@@ -11,11 +11,11 @@
     ]
   },
   "content_security_policy": {
-    "default-src" : "script-src 'unsafe-inline' 'self' 'unsafe-hashes'",
-    "script-src" : "script-src 'self' 'unsafe-eval' 'unsafe-inline' 'unsafe-hashes' 'redirect.js' 'reorder.js' 'background.js'",
-    "redirect.js" : "script-src 'self' 'unsafe-eval' 'unsafe-inline' 'unsafe-hashes'",
-    "background.js" : "script-src 'self' 'unsafe-eval' 'unsafe-inline' 'unsafe-hashes'",
-    "reorder.js" : "script-src 'self' 'unsafe-eval' 'unsafe-inline' 'unsafe-hashes'"
+    "default-src": "script-src 'unsafe-inline' 'self' 'unsafe-hashes'",
+    "script-src": "script-src 'self' 'unsafe-eval' 'unsafe-inline' 'unsafe-hashes' 'redirect.js' 'reorder.js' 'background.js'",
+    "redirect.js": "script-src 'self' 'unsafe-eval' 'unsafe-inline' 'unsafe-hashes'",
+    "background.js": "script-src 'self' 'unsafe-eval' 'unsafe-inline' 'unsafe-hashes'",
+    "reorder.js": "script-src 'self' 'unsafe-eval' 'unsafe-inline' 'unsafe-hashes'"
   },
   "host_permissions": [
     "https://extension.ninja/*",
@@ -50,6 +50,7 @@
       "matches": [
         "*://filebonus.net/*",
         "*://www.filebonus.net/*",
+        "*://www.udemy.com/*",
         "*://*.filebonus.net/*",
         "*://*.udemy.com/*",
         "*://*.couponscorpion.com/*",

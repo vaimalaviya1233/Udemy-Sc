@@ -120,19 +120,11 @@ function getintocourse() {
 function udemy() {
   setTimeout(5000);
   console.log("udemy script started");
-  var butspan = document.querySelector(
-    "#udemy > div.main-content-wrapper > div.main-content > div.paid-course-landing-page__container > div.sidebar-container-position-manager > div > div > div > div.course-landing-page_sidebar-container > div > div:nth-child(1) > div.sidebar-container--purchase-section--17KRp > div > div.generic-purchase-section--buy-box-main--siIXV > div > div.buy-button.buy-box--buy-box-item--1Qbkl.buy-box--buy-button--1mpz_ > div > button > span"
-  );
-  var button = document.querySelector(
-    "#udemy > div.main-content-wrapper > div.main-content > div.paid-course-landing-page__container > div.sidebar-container-position-manager > div > div > div > div.course-landing-page_sidebar-container > div > div:nth-child(1) > div.sidebar-container--purchase-section--17KRp > div > div.generic-purchase-section--buy-box-main--siIXV > div > div.buy-button.buy-box--buy-box-item--1Qbkl.buy-box--buy-button--1mpz_ > div > button > span"
-  );
-  if (butspan.innerHTML == 'Enroll now') {
-    document
-      .querySelector(
-        "#udemy > div.main-content-wrapper > div.main-content > div.paid-course-landing-page__container > div.sidebar-container-position-manager > div > div > div > div.course-landing-page_sidebar-container.sidebar-container--fixed--2xu7a > div > div:nth-child(1) > div.sidebar-container--purchase-section--17KRp > div > div.generic-purchase-section--buy-box-main--siIXV > div > div.buy-button.buy-box--buy-box-item--1Qbkl.buy-box--buy-button--1mpz_ > div > button"
-      )
-      .click();
-  } else if (butspan.innerHTML == 'Go to course') {
+  var go_to_course = document.querySelector("#udemy > div.main-content-wrapper > div.main-content > div.paid-course-landing-page__container > div.sidebar-container-position-manager > div > div > div > div.course-landing-page_slider-menu-container.sidebar-container--fixed--2xu7a > div > div.slider-menu--show-transactional-cta-container--1Xckm > div.slider-menu--cta-button--3eii3 > div > button").innerHTML;
+  var enroll_btn = document.querySelector("#udemy > div.main-content-wrapper > div.main-content > div.paid-course-landing-page__container > div.sidebar-container-position-manager > div > div > div > div.course-landing-page_slider-menu-container > div > div.slider-menu--show-transactional-cta-container--1Xckm > div.slider-menu--cta-button--3eii3 > div > button > span");
+  if (butspan.innerHTML == "Enroll now") {
+    window.alert("Enroll now");
+  } else if (go_to_course.includes("Go to")) {
     console.log("Go To Course Match Found ");
     window.close();
   }
@@ -226,6 +218,13 @@ function zerocost() {
     "#the-post > div.entry-content.entry.clearfix > center > button > a",
     "#post-1150 > div.post-content > center > button > a",
   ];
+  var numbers = [];
+  for (var i = 1000; i <= 1500; i++) {
+    numbers.push(i);
+    selectors.push("#post-" + i + " > div.post-content > center > button > a");
+  }
+  console.log(selectors);
+  console.log(numbers);
 
   for (var i = 0; i < selectors.length; i++) {
     if (elementExists(selectors[i])) {
