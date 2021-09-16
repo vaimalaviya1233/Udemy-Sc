@@ -223,7 +223,7 @@ function zerocost() {
     "#post-1150 > div.post-content > center > button > a",
   ];
   var numbers = [];
-  for (var i = 1000; i <= 1500; i++) {
+  for (var i = 1000; i <= 5000; i++) {
     numbers.push(i);
     selectors.push("#post-" + i + " > div.post-content > center > button > a");
   }
