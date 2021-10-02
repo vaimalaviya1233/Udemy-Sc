@@ -16,14 +16,25 @@ might work on some sites also might not work if website had major/minor website 
 Supported Sites -> :
 
 icontricks.tech 🤦‍
+
 gofreeebooks.in ✔️
+
 coursesity.com  ✔️ - not supported for whole site
+
 google.com (for internal redirects of coursevania) ✔️
+
 udemy.com ⛔️ - being working on 
+
 getintocourse.com 🤦‍ 
+
 coursevania.com  ✔️💯
+
 couponscorpion.com ⛔️ - being worked on
+
 all-ebook.info ✔️💯
+
 filebonus.net ✔️💯
+
 zerocost.co.in ✔️💯
+
  
