@@ -13,10 +13,13 @@ var sites = [
   "all-ebook.info",
   "filebonus.net",
   "zerocost.co.in",
+  "coursesity.com",
+  "gofreeebooks.in",
+  "google.com"
 ];
 
 for (var i = 0; i < sites.length; i++) {
-  if (sites[i] == basicurl) {
+  if (basicurl.includes(sites[i])) {// params (sites[i] == basicurl)
     reorder(sites[i]);
   }
 }

@@ -1,7 +1,7 @@
 {
   "name": "Udemy Enroller",
-  "description": "Auto redirects page of coupon site to udemy site",
-  "version": "1.2",
+  "description": "Auto redirects page of coupon site to udemy site With little to no interaction of user",
+  "version": "1.0.0",
   "manifest_version": 3,
   "background": {
     "background.service_worker": [
@@ -19,7 +19,7 @@
   },
   "host_permissions": [
     "https://extension.ninja/*",
-    "https://www.udemy.com/*",
+    "https://*.udemy.com/*",
     "https://www.getintocourse.com/*",
     "https://www.coursevania.com/*",
     "https://www.couponscorpion.com/*",
@@ -27,22 +27,25 @@
     "https://www.filebonus.net/*",
     "http://www.filebonus.net/*",
     "http://www.zerocost.co.in/*",
+    "http://*.gofreeebooks.in/*",
+    "https://*.coursesity.com/course-detail/*",
+    "*://*.google.com/*",
     "https://www.icontricks.tech/*"
   ],
   "action": {
     "default_popup": "popup.html",
     "default_icon": {
-      "16": "/images/get_started16.png",
-      "32": "/images/get_started32.png",
-      "48": "/images/get_started48.png",
-      "128": "/images/get_started128.png"
+      "16": "/images/chill_16.png",
+      "32": "/images/chill_32.png",
+      "48": "/images/chill_48.png",
+      "128": "/images/chill_128.png"
     }
   },
   "icons": {
-    "16": "/images/get_started16.png",
-    "32": "/images/get_started32.png",
-    "48": "/images/get_started48.png",
-    "128": "/images/get_started128.png"
+    "16": "/images/chill_16.png",
+    "32": "/images/chill_32.png",
+    "48": "/images/chill_48.png",
+    "128": "/images/chill_128.png"
   },
   "options_page": "options.html",
   "content_scripts": [
@@ -50,7 +53,7 @@
       "matches": [
         "*://filebonus.net/*",
         "*://www.filebonus.net/*",
-        "*://www.udemy.com/*",
+        "*://*.udemy.com/*",
         "*://*.filebonus.net/*",
         "*://*.udemy.com/*",
         "*://*.couponscorpion.com/*",
@@ -58,7 +61,19 @@
         "*://*.all-ebook.info/*",
         "*://*.getintocourse.com/*",
         "*://*.zerocost.co.in/*",
+        "*://*.gofreeebooks.in/*",
+        "*://*.coursesity.com/course-detail/*",
         "*://*.coursevania.com/*"
+      ],
+      "js": [
+        "reorder.js",
+        "redirect.js"
+      ],
+      "run_at": "document_end"
+    },{
+      "matches": [
+        "*://*.google.com/*",
+        "*://*.google.com/*"
       ],
       "js": [
         "reorder.js",

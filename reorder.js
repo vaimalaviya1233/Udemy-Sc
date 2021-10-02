@@ -25,6 +25,15 @@ function reorder(url) {
     case "zerocost.co.in":
       zerocost();
       break;
+    case "coursesity.com":
+      coursesity();
+      break;
+    case "gofreeebooks.in":
+      gofreeebooks();
+      break;
+    case "google.com":
+      google();
+      break;
     default:
       break;
   }
@@ -32,14 +41,47 @@ function reorder(url) {
 function getcouponscorpion() {
   //couponscorpion.com
   setTimeout(8000);
-  coupon = document.querySelector(
-    "#post-171638 > div.disablemobileborder.single_top_postproduct.pt20.pb20.border-top.border-grey-bottom.mb30.flowhidden.clearfix > div.right_st_postproduct.floatright.mobileblockdisplay > div > span.rh_button_wrapper > a"
-  );
-  if (coupon != null) {
-    window.location.assign(coupon["href"]);
+  var aTags = document.getElementsByTagName("a");
+  var searchText = "GET COUPON CODE";
+  var found = null;
+  for (var i = 0; i < aTags.length; i++) {
+    if (aTags[i].outerText == searchText) {
+      found = aTags[i];
+      console.log(aTags[i]);
+      found.click();
+      // window.location.assign(found.getAttribute("href"));
+      setTimeout(2000);
+      udemy();
+      setTimeout(9000);
+      break;
+    }
   }
-  setTimeout(2000);
-  udemy();
+  if (found == null) {
+    console.log(" null ");
+  }
+}
+
+function google() {
+  var url = window.location.href;
+  if (url.includes("coursevania.com")) {
+    console.log(
+      url
+        .slice(url.indexOf("coursevania"), url.indexOf("&"))
+        .replaceAll("%3A", ":")
+        .replaceAll("%2F", "/")
+    );
+    var reworked = url
+      .slice(url.indexOf("coursevania.com"))
+      .replaceAll("%3A", ":")
+      .replaceAll("%2F", "/");
+    window.location.replace(
+      "https://" +
+        url
+          .slice(url.indexOf("coursevania"), url.indexOf("&"))
+          .replaceAll("%3A", ":")
+          .replaceAll("%2F", "/")
+    );
+  }
 }
 
 function filebonus() {
@@ -113,42 +155,47 @@ function getintocourse() {
     alert("non exist");
     console.log("nothing found");
   }
-  setTimeout(2000);
   udemy();
 }
 
 function udemy() {
   setTimeout(5000);
-  console.log("udemy script started");
-  var go_to_course = document.querySelector(
-    "#udemy > div.main-content-wrapper > div.main-content > div.paid-course-landing-page__container > div.sidebar-container-position-manager > div > div > div > div.course-landing-page_slider-menu-container.sidebar-container--fixed--2xu7a > div > div.slider-menu--show-transactional-cta-container--1Xckm > div.slider-menu--cta-button--3eii3 > div > button"
-  ).innerHTML;
-  var enroll_btn = document.querySelector(
-    "#udemy > div.main-content-wrapper > div.main-content > div.paid-course-landing-page__container > div.sidebar-container-position-manager > div > div > div > div.course-landing-page_slider-menu-container > div > div.slider-menu--show-transactional-cta-container--1Xckm > div.slider-menu--cta-button--3eii3 > div > button > span"
-  );
-  if (butspan.innerHTML == "Enroll now") {
-    window.alert("Enroll now");
-  } else if (go_to_course.includes("Go to")) {
-    console.log("Go To Course Match Found ");
-    window.close();
+  var buttons = document.getElementsByTagName("button");
+  var searchText = "Enroll now";
+  var found = null;
+  for (var i = 0; i < buttons.length; i++) {
+    if (buttons[i].outerText == searchText) {
+      found = buttons[i];
+      console.log(buttons[i]);
+      // found.click();
+      break;
+    }
+  }
+  if (found == null) {
+    console.log(" null ");
   }
 }
 
 function coursevania() {
   //coursevania.com
-  window.location.assign(
-    document.getElementsByClassName("no-price")[0]["href"]
-  );
-  setTimeout(2000);
-  udemy();
+  if (
+    elementExists(
+      "#main > div > div > div > div.col-md-4.col-sm-5.udemy-sidebar-holder > div.stm-lms-course__sidebar-holder > div > div.stm_lms_udemy__affiliate_btn > div > a"
+    )
+  ) {
+    window.location.assign(
+      document.getElementsByClassName("no-price")[0]["href"]
+    );
+    udemy();
+  }
 }
 
 function icontricks() {
   //icontricks.tech
   //checks if element exists by document.querySelector
-  function elementExists(selector) {
-    return document.querySelector(selector) !== null;
-  }
+  // function elementExists(selector) {
+  //   return document.querySelector(selector) !== null;
+  // }
 
   function getLink(el) {
     var link = el.getAttribute("href");
@@ -168,7 +215,6 @@ function icontricks() {
       window.location.assign(document.querySelector(selectors[i])["href"]);
     }
   }
-  setTimeout(2000);
   udemy();
 }
 function zerocost() {
@@ -184,41 +230,6 @@ function zerocost() {
   }
 
   var selectors = [
-    "#post-1378 > div.post-content > center > button > a",
-    "#post-1372 > div.post-content > center > button > a",
-    "#post-1374 > div.post-content > center > button > a",
-    "#post-1386 > div.post-content > center > button > a",
-    "#post-1388 > div.post-content > center > button > a",
-    "#post-1390 > div.post-content > center > button > a",
-    "#post-1394 > div.post-content > center > button > a",
-    "#post-1392 > div.post-content > center > button > a",
-    "#post-1144 > div.post-content > center > button > a",
-    "#post-1228 > div.post-content > center > button > a",
-    "#post-1232 > div.post-content > center > button > a",
-    "#post-1234 > div.post-content > center > button > a",
-    "#post-1238 > div.post-content > center > button > a",
-    "#post-1242 > div.post-content > center > button > a",
-    "#post-1247 > div.post-content > center > button > a",
-    "#post-1245 > div.post-content > center > button > a",
-    "#post-1249 > div.post-content > center > button > a",
-    "#post-1251 > div.post-content > center > button > a",
-    "#post-1253 > div.post-content > center > button > a",
-    "#post-1148 > div.post-content > center > button > a",
-    "#post-1152 > div.post-content > center > button > a",
-    "#post-1171 > div.post-content > center > button > a",
-    "#post-1173 > div.post-content > center > button > a",
-    "#post-1159 > div.post-content > center > button > a",
-    "#post-1161 > div.post-content > center > button > a",
-    "#post-1165 > div.post-content > center > button > a",
-    "#post-1167 > div.post-content > center > button > a",
-    "#post-1169 > div.post-content > center > button > a",
-    "#post-1155 > div.post-content > center > button > a",
-    "#post-1157 > div.post-content > center > button > a",
-    "#post-1179 > div.post-content > center > button > a",
-    "#post-1146 > div.post-content > center > button > a",
-    "#the-post > div.entry-content.entry.clearfix > center > button > a",
-    "#the-post > div.entry-content.entry.clearfix > center > button > a",
-    "#the-post > div.entry-content.entry.clearfix > center > button > a",
     "#the-post > div.entry-content.entry.clearfix > center > button > a",
     "#post-1150 > div.post-content > center > button > a",
   ];
@@ -236,6 +247,54 @@ function zerocost() {
       window.location.assign(document.querySelector(selectors[i])["href"]);
     }
   }
-  setTimeout(2000);
   udemy();
+}
+function gofreeebooks() {
+  //zerocost.co.in
+  //checks if element exists by document.querySelector
+  function elementExists(selector) {
+    return document.querySelector(selector) != null;
+  }
+
+  function getLink(el) {
+    var link = el.getAttribute("href");
+    return link;
+  }
+
+  var selectors = ["#post-1378 > div.post-content > center > button > a"];
+  var numbers = [];
+  for (var i = 0; i <= 5000; i++) {
+    numbers.push(i);
+    selectors.push(
+      "#post-" + i + " > div.entry-content.si-entry > center > button > a"
+    );
+  }
+  console.log(selectors);
+  console.log(numbers);
+
+  for (var i = 0; i < selectors.length; i++) {
+    if (elementExists(selectors[i])) {
+      console.log(selectors[i]);
+      window.location.assign(document.querySelector(selectors[i])["href"]);
+    }
+  }
+  setTimeout(2000);
+  // udemy();
+}
+
+function coursesity() {
+  if (
+    elementExists(
+      "#course-detail-data > section > div > div:nth-child(1) > div.col-lg-12.no__padding > div > div > div.col-lg-4 > div > div"
+    )
+  ) {
+    window.location.assign(
+      document.getElementsByClassName("trial-btn1")[0].href
+    );
+  }
+  udemy();
+}
+
+function elementExists(selector) {
+  return document.querySelector(selector) !== null;
 }
