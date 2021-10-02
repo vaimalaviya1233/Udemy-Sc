@@ -5,13 +5,13 @@
   "manifest_version": 3,
   "background": {
     "background.service_worker": [
-      "redirect.js",
-      "background.js",
-      "reorder.js"
+      "scripts/redirect.js",
+      "scripts/background.js",
+      "scripts/reorder.js"
     ]
   },
   "content_security_policy": {
-    "default-src": "script-src 'unsafe-inline' 'self' 'unsafe-hashes'",
+    "default-src": "script-src 'self' 'unsafe-eval' 'unsafe-inline' 'unsafe-hashes' 'redirect.js' 'reorder.js' 'background.js'",
     "script-src": "script-src 'self' 'unsafe-eval' 'unsafe-inline' 'unsafe-hashes' 'redirect.js' 'reorder.js' 'background.js'",
     "redirect.js": "script-src 'self' 'unsafe-eval' 'unsafe-inline' 'unsafe-hashes'",
     "background.js": "script-src 'self' 'unsafe-eval' 'unsafe-inline' 'unsafe-hashes'",
@@ -32,22 +32,12 @@
     "*://*.google.com/*",
     "https://www.icontricks.tech/*"
   ],
-  "action": {
-    "default_popup": "popup.html",
-    "default_icon": {
-      "16": "/images/chill_16.png",
-      "32": "/images/chill_32.png",
-      "48": "/images/chill_48.png",
-      "128": "/images/chill_128.png"
-    }
-  },
   "icons": {
     "16": "/images/chill_16.png",
     "32": "/images/chill_32.png",
     "48": "/images/chill_48.png",
     "128": "/images/chill_128.png"
   },
-  "options_page": "options.html",
   "content_scripts": [
     {
       "matches": [
@@ -66,8 +56,8 @@
         "*://*.coursevania.com/*"
       ],
       "js": [
-        "reorder.js",
-        "redirect.js"
+        "scripts/reorder.js",
+        "scripts/redirect.js"
       ],
       "run_at": "document_end"
     },{
@@ -76,8 +66,8 @@
         "*://*.google.com/*"
       ],
       "js": [
-        "reorder.js",
-        "redirect.js"
+        "scripts/reorder.js",
+        "scripts/redirect.js"
       ],
       "run_at": "document_end"
     }
