@@ -298,14 +298,35 @@ function coursesity() {
   udemy();
 }
 function studybullet() {
-  if (
+  /* if (
     elementExists("#post-41174 > div.entry-content.clr > div.button_cont > a")
   ) {
     window.location.assign(
       document.getElementsByClassName("enroll_btn")[0].href
     );
   }
-  udemy();
+  udemy(); */
+
+  var selectors = [
+    "#the-post > div.entry-content.entry.clearfix > center > button > a",
+    "#post-1150 > div.post-content > center > button > a",
+  ];
+  var numbers = [];
+  for (var i = 1000; i <= 100000; i++) {
+    numbers.push(i);
+    selectors.push(
+      "#post-" + i + " > div.entry-content.clr > div.button_cont > a"
+    );
+  }
+  console.log(selectors);
+  console.log(numbers);
+
+  for (var i = 0; i < selectors.length; i++) {
+    if (elementExists(selectors[i])) {
+      console.log(selectors[i]);
+      window.location.assign(document.querySelector(selectors[i])["href"]);
+    }
+  }
 }
 
 function elementExists(selector) {
