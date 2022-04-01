@@ -34,6 +34,9 @@ function reorder(url) {
     case "google.com":
       google();
       break;
+    case "studybullet.com":
+      studybullet();
+      break;
     default:
       break;
   }
@@ -290,6 +293,16 @@ function coursesity() {
   ) {
     window.location.assign(
       document.getElementsByClassName("trial-btn1")[0].href
+    );
+  }
+  udemy();
+}
+function studybullet() {
+  if (
+    elementExists("#post-41174 > div.entry-content.clr > div.button_cont > a")
+  ) {
+    window.location.assign(
+      document.getElementsByClassName("enroll_btn")[0].href
     );
   }
   udemy();

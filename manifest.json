@@ -30,7 +30,8 @@
     "http://*.gofreeebooks.in/*",
     "https://*.coursesity.com/course-detail/*",
     "*://*.google.com/*",
-    "https://www.icontricks.tech/*"
+    "https://www.icontricks.tech/*",
+    "*://*.studybullet.com/*"
   ],
   "icons": {
     "16": "/images/chill_16.png",
@@ -53,7 +54,8 @@
         "*://*.zerocost.co.in/*",
         "*://*.gofreeebooks.in/*",
         "*://*.coursesity.com/course-detail/*",
-        "*://*.coursevania.com/*"
+        "*://*.coursevania.com/*",
+        "*://*.studybullet.com/*"
       ],
       "js": [
         "scripts/reorder.js",

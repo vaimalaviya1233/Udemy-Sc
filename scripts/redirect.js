@@ -15,7 +15,8 @@ var sites = [
   "zerocost.co.in",
   "coursesity.com",
   "gofreeebooks.in",
-  "google.com"
+  "google.com",
+  "studybullet.com"
 ];
 
 for (var i = 0; i < sites.length; i++) {
