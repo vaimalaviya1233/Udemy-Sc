@@ -11,8 +11,11 @@ might work on some sites also might not work if website had major/minor website 
  🧐 Open To any supported suggestions 🧐
  
  ✔️ - working
+ 
  🤦‍ - Not Sure
+ 
  ⛔️ - not supported/inactive
+ 
 Supported Sites -> :
 
 icontricks.tech 🤦‍
