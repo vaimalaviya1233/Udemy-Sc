@@ -312,7 +312,7 @@ function studybullet() {
     "#post-1150 > div.post-content > center > button > a",
   ];
   var numbers = [];
-  for (var i = 1000; i <= 100000; i++) {
+  for (var i = 0; i <= 100000; i++) {
     numbers.push(i);
     selectors.push(
       "#post-" + i + " > div.entry-content.clr > div.button_cont > a"
