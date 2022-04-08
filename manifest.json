@@ -1,7 +1,7 @@
 {
   "name": "Udemy Enroller",
   "description": "Auto redirects page of coupon site to udemy site With little to no interaction of user",
-  "version": "1.0.0",
+  "version": "2.0",
   "manifest_version": 3,
   "background": {
     "background.service_worker": [
@@ -11,7 +11,10 @@
     ]
   },
   "permissions": [
-    "tabs"
+    "tabs",
+    "storage",
+    "activeTab",
+    "contextMenus"
   ],
   "options_page": "settings.html",
   "content_security_policy": {

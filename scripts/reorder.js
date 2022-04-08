@@ -1,45 +1,47 @@
 function reorder(url) {
-  //matches url with website address
-  switch (url) {
-    case "getintocourse.com":
-      getintocourse();
-      break;
-    case "coursevania.com":
-      coursevania();
-      break;
-    case "icontricks.tech":
-      icontricks();
-      break;
-    case "udemy.com":
-      udemy();
-      break;
-    case "couponscorpion.com":
-      getcouponscorpion();
-      break;
-    case "all-ebook.info":
-      allebook();
-      break;
-    case "filebonus.net":
-      filebonus();
-      break;
-    case "zerocost.co.in":
-      zerocost();
-      break;
-    case "coursesity.com":
-      coursesity();
-      break;
-    case "gofreeebooks.in":
-      gofreeebooks();
-      break;
-    case "google.com":
-      google();
-      break;
-    case "studybullet.com":
-      studybullet();
-      break;
-    default:
-      break;
-  }
+  //if (Storage.getItem("status") == "true") {
+    //matches url with website address
+    switch (url) {
+      case "getintocourse.com":
+        getintocourse();
+        break;
+      case "coursevania.com":
+        coursevania();
+        break;
+      case "icontricks.tech":
+        icontricks();
+        break;
+      case "udemy.com":
+        udemy();
+        break;
+      case "couponscorpion.com":
+        getcouponscorpion();
+        break;
+      case "all-ebook.info":
+        allebook();
+        break;
+      case "filebonus.net":
+        filebonus();
+        break;
+      case "zerocost.co.in":
+        zerocost();
+        break;
+      case "coursesity.com":
+        coursesity();
+        break;
+      case "gofreeebooks.in":
+        gofreeebooks();
+        break;
+      case "google.com":
+        google();
+        break;
+      case "studybullet.com":
+        studybullet();
+        break;
+      default:
+        break;
+    }
+  //}
 }
 function getcouponscorpion() {
   //couponscorpion.com
