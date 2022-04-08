@@ -10,6 +10,10 @@
       "scripts/reorder.js"
     ]
   },
+  "permissions": [
+    "tabs"
+  ],
+  "options_page": "settings.html",
   "content_security_policy": {
     "default-src": "script-src 'self' 'unsafe-eval' 'unsafe-inline' 'unsafe-hashes' 'redirect.js' 'reorder.js' 'background.js'",
     "script-src": "script-src 'self' 'unsafe-eval' 'unsafe-inline' 'unsafe-hashes' 'redirect.js' 'reorder.js' 'background.js'",

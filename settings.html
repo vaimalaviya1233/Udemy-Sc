@@ -1,0 +1,150 @@
+<html><head>
+  <link rel="icon" type="image/png" href="img/icon16.png">
+  <link type="text/css" rel="stylesheet" href="css/icon-font.css" media="screen,projection">
+  <link type="text/css" rel="stylesheet" href="css/materialize.css" media="screen,projection">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>Udemy Enroller Settings</title>
+  <style>
+    body {
+      background: #f1f1f1;
+    }
+
+    nav {
+      background: #26a69a;
+    }
+
+    nav .brand-logo {
+      font-size: 150%;
+      font-weight: 400;
+      padding-left: 26px;
+    }
+
+    .container {
+      margin-top: 10px;
+    }
+    .web-list {
+      font-size: medium;
+    }
+    .head-web{
+      font-size: large;
+    }
+
+    p {
+      margin-bottom: 5px !important;
+      font-size: 1rem !important;
+    }
+
+    .btn {
+      width: 100%;
+      margin-top: 10px;
+    }
+
+    .collection {
+      border: none !important;
+    }
+
+    .collection-item p {
+      padding-right: 115px;
+    }
+
+    .title {
+      font-weight: bold;
+    }
+
+    @media screen and (max-width: 992px) {
+      nav .brand-logo {
+        padding-left: 0 !important;
+      }
+
+      #toast-container {
+        padding: 20px !important;
+      }
+    }
+
+    /* Hide circle icons on small screens */
+    @media screen and (max-width: 480px) {
+      .circle {
+        display: none !important;
+      }
+
+      .collection .collection-item.avatar {
+        padding-left: 20px !important;
+        margin-bottom: 20px !important;
+        display: inline-block !important;
+      }
+
+      .secondary-content {
+        float: right !important;
+      }
+
+    }
+
+    /* Move sliders for setting items to new row */
+    @media screen and (max-width: 380px) {
+      .collection-item p {
+        padding-right: 0 !important;
+      }
+
+      .secondary-content {
+        position: static !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="navbar-fixed">
+    <nav>
+      <div class="nav-wrapper">
+        <a href="#" class="brand-logo">Udemy Enroller<span id="version"></span></a>
+      </div>
+    </nav>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col s12">
+        <div class="card">
+          <div class="card-content"> <span class="card-title">About this extension</span>
+            <p>This Extions redirects Udemy coupon websites to udemy.</p>
+            <p>It makes easy. Because some Udemy Coupon websites have Button to clock but at end of the page and contains ads. this Extension basically try to bypass those restrictions. Also it will only work on 100% of coupons in listed Sites.</p>
+            <ul class="">
+              <li>Currently Supported Sites</li>
+            </ul>
+            <div class="collection with-header">
+                <li class="collection-header head-web">Currently Supported Sites</li>
+                <li class="collection-item web-list">Udemy.com<a href="udemy.com" class="secondary-content"><i class="material-icons">open_in_new</i></a></li>
+                <li class="collection-item web-list">Coursevania.com<a href="coursevania.com" class="secondary-content"><i class="material-icons">open_in_new</i></a></li>
+                <li class="collection-item web-list">getintocourse.com<a href="getintocourse.com" class="secondary-content"><i class="material-icons">open_in_new</i></a></li>
+                <li class="collection-item web-list">icontricks.tech<a href="icontricks.tech" class="secondary-content"><i class="material-icons">open_in_new</i></a></li>
+                <li class="collection-item web-list">couponscorpion.com<a href="couponscorpion.com" class="secondary-content"><i class="material-icons">open_in_new</i></a></li>
+                <li class="collection-item web-list">zerocost.co.in<a href="zerocost.co.in" class="secondary-content"><i class="material-icons">open_in_new</i></a></li>
+                <li class="collection-item web-list">coursesity.com<a href="coursesity.com" class="secondary-content"><i class="material-icons">open_in_new</i></a></li>
+                <li class="collection-item web-list">studybullet.com<a href="studybullet.com" class="secondary-content"><i class="material-icons">open_in_new</i></a></li>
+                <li class="collection-item web-list">gofreeebooks.in<a href="gofreeebooks.in!" class="secondary-content"><i class="material-icons">open_in_new</i></a></li>
+                <li class="collection-item web-list">all-ebook.info<a href="all-ebook.info" class="secondary-content"><i class="material-icons">open_in_new</i></a></li>
+                <li class="collection-item web-list">filebonus.net<a href="filebonus.net" class="secondary-content"><i class="material-icons">open_in_new</i></a></li>
+              </div>
+          </div>
+        </div>
+        <div class="card">
+          <ul class="collection">
+            <li class="collection-item avatar"> <i class="material-icons circle orange">open_in_new</i> <span class="title">Extension Status</span>
+              <p>This is Switch to Turn on the Extension. By Default it is Turned On <a href="https://github.com/vaimalaviya1233/Udemy-Sc" target="_blank">View Source on Github</a></p> <span class="secondary-content">
+                <div class="switch"> <label> Off <input type="checkbox" id="status"> <span class="lever"></span> On
+                  </label> </div>
+              </span>
+            </li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="card-content"> <span class="card-title">Important Information</span>
+            <li>All icons that is here belong to their righful and respectful Owner &amp; their Websites.</li>
+            <li>Nor Do I nor This Chrome Extension does not have any relation with Websites Mensioned. This is just Side Project of Mine.</li>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript" src="scripts/materialize.js"></script>
+    <script src="scripts/settings.js"></script>
+</div></body></html>
