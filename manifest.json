@@ -18,11 +18,11 @@
   ],
   "options_page": "settings.html",
   "content_security_policy": {
-    "default-src": "script-src 'self' 'unsafe-eval' 'unsafe-inline' 'unsafe-hashes' 'redirect.js' 'reorder.js' 'background.js'",
-    "script-src": "script-src 'self' 'unsafe-eval' 'unsafe-inline' 'unsafe-hashes' 'redirect.js' 'reorder.js' 'background.js'",
-    "redirect.js": "script-src 'self' 'unsafe-eval' 'unsafe-inline' 'unsafe-hashes'",
-    "background.js": "script-src 'self' 'unsafe-eval' 'unsafe-inline' 'unsafe-hashes'",
-    "reorder.js": "script-src 'self' 'unsafe-eval' 'unsafe-inline' 'unsafe-hashes'"
+    "default-src": "script-src 'self' 'unsafe-eval' 'unsafe-inline' 'unsafe-hashes' 'redirect.js' 'reorder.js' 'background.js' 'strict-dynamic' 'nonce-BR0u7MF4TZtWJeZXXJv7d85O80dSH/ByufQAlErO3Fg=' 'unsafe-inline' https:",
+    "script-src": "script-src 'self' 'unsafe-eval' 'unsafe-inline' 'unsafe-hashes' 'redirect.js' 'reorder.js' 'background.js' 'strict-dynamic' 'nonce-BR0u7MF4TZtWJeZXXJv7d85O80dSH/ByufQAlErO3Fg=' 'unsafe-inline' https:",
+    "redirect.js": "script-src 'self' 'unsafe-eval' 'unsafe-inline' 'unsafe-hashes' 'strict-dynamic' 'nonce-BR0u7MF4TZtWJeZXXJv7d85O80dSH/ByufQAlErO3Fg=' 'unsafe-inline' https:",
+    "background.js": "script-src 'self' 'unsafe-eval' 'unsafe-inline' 'unsafe-hashes' 'strict-dynamic' 'nonce-BR0u7MF4TZtWJeZXXJv7d85O80dSH/ByufQAlErO3Fg=' 'unsafe-inline' https:",
+    "reorder.js": "script-src 'self' 'unsafe-eval' 'unsafe-inline' 'unsafe-hashes' 'strict-dynamic' 'nonce-BR0u7MF4TZtWJeZXXJv7d85O80dSH/ByufQAlErO3Fg=' 'unsafe-inline' https:"
   },
   "host_permissions": [
     "https://extension.ninja/*",
@@ -37,6 +37,9 @@
     "http://*.gofreeebooks.in/*",
     "https://*.coursesity.com/course-detail/*",
     "*://*.google.com/*",
+    "*://*.zapcourses.com/*",
+    "https://*.zapcourses.com/*",
+    "https://www.zapcourses.com/*",
     "https://www.icontricks.tech/*",
     "*://*.studybullet.com/*"
   ],
@@ -62,6 +65,7 @@
         "*://*.gofreeebooks.in/*",
         "*://*.coursesity.com/course-detail/*",
         "*://*.coursevania.com/*",
+        "*://*.zapcourses.com/*",
         "*://*.studybullet.com/*"
       ],
       "js": [

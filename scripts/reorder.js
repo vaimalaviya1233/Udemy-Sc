@@ -35,6 +35,9 @@ function reorder(url) {
       case "google.com":
         google();
         break;
+      case "zapcourses.com":
+        zapcourses();
+        break;
       case "studybullet.com":
         studybullet();
         break;
@@ -333,4 +336,11 @@ function studybullet() {
 
 function elementExists(selector) {
   return document.querySelector(selector) !== null;
+}
+
+function zapcourses(){
+  let enrollBtn = document.getElementsByClassName("enroll_btn");
+  if(enrollBtn.length > 0){
+    window.location.assign(enrollBtn[0].href);
+  }
 }

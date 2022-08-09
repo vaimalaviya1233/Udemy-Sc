@@ -16,6 +16,7 @@ var sites = [
   "coursesity.com",
   "gofreeebooks.in",
   "google.com",
+  "zapcourses.com",
   "studybullet.com"
 ];
 
