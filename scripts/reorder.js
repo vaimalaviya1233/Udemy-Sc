@@ -1,49 +1,49 @@
 function reorder(url) {
   //if (Storage.getItem("status") == "true") {
-    //matches url with website address
-    switch (url) {
-      case "getintocourse.com":
-        getintocourse();
-        break;
-      case "coursevania.com":
-        coursevania();
-        break;
-      case "icontricks.tech":
-        icontricks();
-        break;
-      case "udemy.com":
-        udemy();
-        break;
-      case "couponscorpion.com":
-        getcouponscorpion();
-        break;
-      case "all-ebook.info":
-        allebook();
-        break;
-      case "filebonus.net":
-        filebonus();
-        break;
-      case "zerocost.co.in":
-        zerocost();
-        break;
-      case "coursesity.com":
-        coursesity();
-        break;
-      case "gofreeebooks.in":
-        gofreeebooks();
-        break;
-      case "google.com":
-        google();
-        break;
-      case "zapcourses.com":
-        zapcourses();
-        break;
-      case "studybullet.com":
-        studybullet();
-        break;
-      default:
-        break;
-    }
+  //matches url with website address
+  switch (url) {
+    case "getintocourse.com":
+      getintocourse();
+      break;
+    case "coursevania.com":
+      coursevania();
+      break;
+    case "icontricks.tech":
+      icontricks();
+      break;
+    case "udemy.com":
+      udemy();
+      break;
+    case "couponscorpion.com":
+      getcouponscorpion();
+      break;
+    case "all-ebook.info":
+      allebook();
+      break;
+    case "filebonus.net":
+      filebonus();
+      break;
+    case "zerocost.co.in":
+      zerocost();
+      break;
+    case "coursesity.com":
+      coursesity();
+      break;
+    case "gofreeebooks.in":
+      gofreeebooks();
+      break;
+    case "google.com":
+      google();
+      break;
+    case "zapcourses.com":
+      zapcourses();
+      break;
+    case "studybullet.com":
+      studybullet();
+      break;
+    default:
+      break;
+  }
   //}
 }
 function getcouponscorpion() {
@@ -338,9 +338,16 @@ function elementExists(selector) {
   return document.querySelector(selector) !== null;
 }
 
-function zapcourses(){
+function zapcourses() {
   let enrollBtn = document.getElementsByClassName("enroll_btn");
-  if(enrollBtn.length > 0){
-    window.location.assign(enrollBtn[0].href);
+  // example redirect link: https://zapcourses.com/enroll/?path=/negotiation-skills-become-a-master-of-negotiation/&url=https://www.udemy.com/course/negotiation-how-to-craft-agreements-that-give-everyone-more-u/?couponCode=A414527A5B304F76092F
+  //make it redirect to the udemy link
+  if (enrollBtn.length > 0) {
+    let redirectLink = enrollBtn[0].href;
+    let udemyLink = redirectLink.split("url=")[1];
+    window.location.assign(udemyLink);
   }
+  //if (enrollBtn.length > 0) {
+  //  window.location.assign(enrollBtn[0].href);
+  //}
 }

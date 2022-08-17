@@ -1,4 +1,6 @@
 {
-    "editor.suggest.snippetsPreventQuickSuggestions": false,
-    "aiXcoder.showTrayIcon": true
+  "editor.suggest.snippetsPreventQuickSuggestions": false,
+  "aiXcoder.showTrayIcon": true,
+  "editor.tabCompletion": "on",
+  "cSpell.words": ["zapcourses"]
 }
