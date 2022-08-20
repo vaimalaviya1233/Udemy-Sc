@@ -90,6 +90,15 @@ function google() {
           .replaceAll("%2F", "/")
     );
   }
+  if (url.includes("coursesora.com")) {
+    console.log(
+      url.slice(url.slice(url.indexOf("coursesora", url.indexOf(""))))
+    );
+    var reworked = url.slice(url.indexOf("coursesora", url.indexOf("")));
+    window.location.replace(
+      "https://" + url.slice(url.indexOf("coursesora", url.indexOf("")))
+    );
+  }
 }
 
 function filebonus() {
