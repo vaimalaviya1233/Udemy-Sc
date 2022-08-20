@@ -178,19 +178,27 @@ function getintocourse() {
 function udemy() {
   setTimeout(5000);
   var buttons = document.getElementsByTagName("button");
-  var searchText = "Enroll now";
-  var found = null;
-  for (var i = 0; i < buttons.length; i++) {
-    if (buttons[i].outerText == searchText) {
-      found = buttons[i];
-      console.log(buttons[i]);
-      // found.click();
-      break;
-    }
-  }
-  if (found == null) {
-    console.log(" null ");
-  }
+  // redirect webpage from https://www.udemy.com/course/complete-unity-2d-megacourse-beginner-to-expert/?couponCode=544481A5D8FEB412ED80 which has course id in body tag in html to https://www.udemy.com/cart/checkout/express/course/4713448/?discountCode=544481A5D8FEB412ED80
+  var body = document.getElementsByTagName("body");
+  var courseid = body[0].getAttribute("data-clp-course-id");
+  var url = window.location.href;
+  var discountcode = url.slice(url.indexOf("couponCode=") + 11);
+  var newurl =
+    "https://www.udemy.com/cart/checkout/express/course/" +
+    courseid +
+    "/?discountCode=" +
+    discountcode;
+  console.log(newurl);
+
+  window.setTimeout(5000);
+
+  //window.location.replace(newurl);
+  /* var checkout = document.getElementsByClassName(
+    "checkout-button--checkout-button--button--1S-XD"
+  );
+  if (checkout.length) {
+    checkout[0].click();
+  } */
 }
 
 function coursevania() {
@@ -355,8 +363,28 @@ function zapcourses() {
     let redirectLink = enrollBtn[0].href;
     let udemyLink = redirectLink.split("url=")[1];
     window.location.assign(udemyLink);
+    timeout(2000);
+    udemy();
   }
   //if (enrollBtn.length > 0) {
   //  window.location.assign(enrollBtn[0].href);
   //}
 }
+
+/* function udemy() {
+  setTimeout(5000);
+  var buttons = document.getElementsByTagName("button");
+  var searchText = "Enroll now";
+  var found = null;
+  for (var i = 0; i < buttons.length; i++) {
+    if (buttons[i].outerText == searchText) {
+      found = buttons[i];
+      console.log(buttons[i]);
+      // found.click();
+      break;
+    }
+  }
+  if (found == null) {
+    console.log(" null ");
+  }
+} */
