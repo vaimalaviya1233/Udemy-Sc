@@ -2,8 +2,5 @@
   "editor.suggest.snippetsPreventQuickSuggestions": false,
   "aiXcoder.showTrayIcon": true,
   "editor.tabCompletion": "on",
-  "cSpell.words": [
-    "coursesora",
-    "zapcourses"
-  ]
+  "cSpell.words": ["coursesbits", "coursesora", "zapcourses"]
 }

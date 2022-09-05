@@ -8,6 +8,9 @@ function reorder(url) {
     case "coursevania.com":
       coursevania();
       break;
+    case "coursesbits.com":
+      coursesbits();
+      break;
     case "icontricks.tech":
       icontricks();
       break;
@@ -42,6 +45,7 @@ function reorder(url) {
       studybullet();
       break;
     default:
+      console.log(url + "  not found --___-- ");
       break;
   }
   //}
@@ -67,6 +71,10 @@ function getcouponscorpion() {
   if (found == null) {
     console.log(" null ");
   }
+}
+
+function coursesbits() {
+  document.getElementById("enroll").click();
 }
 
 function google() {
@@ -97,6 +105,24 @@ function google() {
     var reworked = url.slice(url.indexOf("coursesora", url.indexOf("")));
     window.location.replace(
       "https://" + url.slice(url.indexOf("coursesora", url.indexOf("")))
+    );
+  }
+  if (url.includes("zapcourses.com")) {
+    console.log(
+      url.slice(url.slice(url.indexOf("zapcourses", url.indexOf(""))))
+    );
+    var reworked = url.slice(url.indexOf("zapcourses", url.indexOf("")));
+    window.location.replace(
+      "https://" + url.slice(url.indexOf("zapcourses", url.indexOf("")))
+    );
+  }
+  if (url.includes("studybullet.com")) {
+    console.log(
+      url.slice(url.slice(url.indexOf("studybullet", url.indexOf(""))))
+    );
+    var reworked = url.slice(url.indexOf("studybullet", url.indexOf("")));
+    window.location.replace(
+      "https://" + url.slice(url.indexOf("studybullet", url.indexOf("")))
     );
   }
 }
@@ -175,32 +201,6 @@ function getintocourse() {
   udemy();
 }
 
-function udemy() {
-  setTimeout(5000);
-  var buttons = document.getElementsByTagName("button");
-  // redirect webpage from https://www.udemy.com/course/complete-unity-2d-megacourse-beginner-to-expert/?couponCode=544481A5D8FEB412ED80 which has course id in body tag in html to https://www.udemy.com/cart/checkout/express/course/4713448/?discountCode=544481A5D8FEB412ED80
-  var body = document.getElementsByTagName("body");
-  var courseid = body[0].getAttribute("data-clp-course-id");
-  var url = window.location.href;
-  var discountcode = url.slice(url.indexOf("couponCode=") + 11);
-  var newurl =
-    "https://www.udemy.com/cart/checkout/express/course/" +
-    courseid +
-    "/?discountCode=" +
-    discountcode;
-  console.log(newurl);
-
-  window.setTimeout(5000);
-
-  //window.location.replace(newurl);
-  /* var checkout = document.getElementsByClassName(
-    "checkout-button--checkout-button--button--1S-XD"
-  );
-  if (checkout.length) {
-    checkout[0].click();
-  } */
-}
-
 function coursevania() {
   //coursevania.com
   if (
@@ -222,7 +222,7 @@ function icontricks() {
   //   return document.querySelector(selector) !== null;
   // }
 
-  function getLink(el) {
+  /* function getLink(el) {
     var link = el.getAttribute("href");
     return link;
   }
@@ -232,6 +232,8 @@ function icontricks() {
     "#the-post > div.entry-content.entry.clearfix > center > button > a",
     "#the-post > div.entry-content.entry.clearfix > center > button > a",
     "#the-post > div.entry-content.entry.clearfix > center > button > a",
+    "#post-5220 > div.article-content.clearfix > div.entry-content.clearfix > center > button > a",
+    "#post-5223 > div.article-content.clearfix > div.entry-content.clearfix > center > button > a",
   ];
 
   for (var i = 0; i < selectors.length; i++) {
@@ -240,6 +242,40 @@ function icontricks() {
       window.location.assign(document.querySelector(selectors[i])["href"]);
     }
   }
+  udemy(); */
+
+  function elementExists(selector) {
+    return document.querySelector(selector) != null;
+  }
+
+  function getLink(el) {
+    var link = el.getAttribute("href");
+    return link;
+  }
+
+  var selectors = [
+    "#post-1378 > div.article-content.clearfix > div.entry-content.clearfix > center > button > a",
+  ];
+  var numbers = [];
+  for (var i = 0; i <= 12000; i++) {
+    numbers.push(i);
+    selectors.push(
+      "#post-" +
+        i +
+        " > div.article-content.clearfix > div.entry-content.clearfix > center > button > a"
+    );
+    //"#post-5220 > div.article-content.clearfix > div.entry-content.clearfix > center > button > a"
+  }
+  console.log(selectors);
+  console.log(numbers);
+
+  for (var i = 0; i < selectors.length; i++) {
+    if (elementExists(selectors[i])) {
+      console.log(selectors[i]);
+      window.location.assign(document.querySelector(selectors[i])["href"]);
+    }
+  }
+  setTimeout(2000);
   udemy();
 }
 function zerocost() {
@@ -359,9 +395,11 @@ function zapcourses() {
   let enrollBtn = document.getElementsByClassName("enroll_btn");
   // example redirect link: https://zapcourses.com/enroll/?path=/negotiation-skills-become-a-master-of-negotiation/&url=https://www.udemy.com/course/negotiation-how-to-craft-agreements-that-give-everyone-more-u/?couponCode=A414527A5B304F76092F
   //make it redirect to the udemy link
+  //https://zapcourses.com/enroll/?ZapPath=/media-training-for-print-online-interviews-get-great-quotes/&ZapUrl=https://www.udemy.com/course/media-training-for-print-interviews-and-online-publications/?couponCode=666200FF37461759A861
   if (enrollBtn.length > 0) {
     let redirectLink = enrollBtn[0].href;
-    let udemyLink = redirectLink.split("url=")[1];
+    let udemyLink = redirectLink.split("ZapUrl=")[1];
+    console.log(udemyLink);
     window.location.assign(udemyLink);
     timeout(2000);
     udemy();
@@ -388,3 +426,45 @@ function zapcourses() {
     console.log(" null ");
   }
 } */
+
+function udemy() {
+  window.setTimeout(5000);
+  var currunturl = window.location.href;
+  if (currunturl.includes("udemy.com/course/")) {
+    var buttons = document.getElementsByClassName(
+      "styles--btn--express-checkout--28jN4"
+    );
+    var innerValue = buttons[0].children[0].innerHTML;
+    if (innerValue == "Go to course" || innerValue == "Buy this course") {
+      window.close();
+    }
+    if (innerValue == "Enroll now" || innerValue != "Go to course") {
+      var buttons = document.getElementsByClassName(
+        "styles--btn--express-checkout--28jN4"
+      );
+      // redirect webpage from https://www.udemy.com/course/complete-unity-2d-megacourse-beginner-to-expert/?couponCode=544481A5D8FEB412ED80 which has course id in body tag in html to https://www.udemy.com/cart/checkout/express/course/4713448/?discountCode=544481A5D8FEB412ED80
+      //                       https://www.udemy.com/cart/checkout/express/course/4713448/?discountCode=544481A5D8FEB412ED80
+      var body = document.getElementsByTagName("body");
+      var courseid = body[0].getAttribute("data-clp-course-id");
+      var url = window.location.href;
+      var discountcode = url.slice(url.indexOf("couponCode=") + 11);
+      var newurl =
+        "https://www.udemy.com/cart/checkout/express/course/" +
+        courseid +
+        "/?discountCode=" +
+        discountcode;
+      console.log(newurl);
+      window.location.assign(newurl);
+    }
+  } else if (currunturl.includes("udemy.com/cart/checkout/express/course/")) {
+    window.setTimeout(5000);
+
+    //window.location.replace(newurl);
+    var checkout = document.getElementsByClassName(
+      "checkout-button--checkout-button--button--1S-XD"
+    );
+    if (checkout.length) {
+      checkout[0].click();
+    }
+  }
+}

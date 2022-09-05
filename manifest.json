@@ -27,6 +27,7 @@
   "host_permissions": [
     "https://extension.ninja/*",
     "https://*.udemy.com/*",
+    "https://*.coursesbits.com/*",
     "https://www.getintocourse.com/*",
     "https://www.coursevania.com/*",
     "https://www.couponscorpion.com/*",
@@ -55,6 +56,7 @@
         "*://filebonus.net/*",
         "*://www.filebonus.net/*",
         "*://*.udemy.com/*",
+        "*://*.coursesbits.com/*",
         "*://*.filebonus.net/*",
         "*://*.udemy.com/*",
         "*://*.couponscorpion.com/*",

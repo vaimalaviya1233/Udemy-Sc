@@ -6,6 +6,7 @@ var basicurl = url_array[2]; //output should be icontricks.tech;
 // var absolutesite = ["https://icontricks.tech/", "https://coursevania.com", "https://getintocourse.com/"];
 var sites = [
   "icontricks.tech",
+  "coursesbits.com",
   "coursevania.com",
   "getintocourse.com",
   "udemy.com",
@@ -17,7 +18,7 @@ var sites = [
   "gofreeebooks.in",
   "google.com",
   "zapcourses.com",
-  "studybullet.com"
+  "studybullet.com",
 ];
 
 for (var i = 0; i < sites.length; i++) {
