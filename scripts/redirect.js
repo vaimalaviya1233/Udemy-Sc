@@ -17,7 +17,8 @@ var sites = [
   "gofreeebooks.in",
   "google.com",
   "zapcourses.com",
-  "studybullet.com"
+  "studybullet.com",
+  "moddingunited.xyz"
 ];
 
 for (var i = 0; i < sites.length; i++) {

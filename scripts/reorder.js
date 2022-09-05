@@ -38,6 +38,9 @@ function reorder(url) {
     case "zapcourses.com":
       zapcourses();
       break;
+    case "moddingunited.xyz":
+      moddingunited();
+      break;
     case "studybullet.com":
       studybullet();
       break;
@@ -350,4 +353,19 @@ function zapcourses() {
   //if (enrollBtn.length > 0) {
   //  window.location.assign(enrollBtn[0].href);
   //}
+}
+
+function moddingunited(){
+  var url = window.location;
+  var redirectLink = "";
+  //https://moddingunited.xyz/download/?elif/kpa.detinUgniddoM_0.01.8v_htamotohP/321bvg436b480w6/elif/moc.erifaidem.www//:sptth
+  //https://www.mediafire.com/file/6w084b634gvb123/Photomath_v8.10.0_ModdingUnited.apk/file
+  if((url.hostname === "moddingunited.xyz") && (url.pathname === "/download/")){
+    var redirectUnLink = url.search;
+    for(let i = redirectUnLink.length; i > 0; i-- ){
+      redirectLink += redirectUnLink.charAt(i-1);
+    }
+    console.log(redirectLink);
+    window.location.assign(redirectLink);
+  }
 }

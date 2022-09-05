@@ -1,7 +1,7 @@
 {
   "name": "Udemy Enroller",
   "description": "Auto redirects page of coupon site to udemy site With little to no interaction of user",
-  "version": "2.0",
+  "version": "2.0.1",
   "manifest_version": 3,
   "background": {
     "background.service_worker": [
@@ -37,6 +37,7 @@
     "http://*.gofreeebooks.in/*",
     "https://*.coursesity.com/course-detail/*",
     "*://*.google.com/*",
+    "*://*.moddingunited.xyz/*",
     "*://*.zapcourses.com/*",
     "https://*.zapcourses.com/*",
     "https://www.zapcourses.com/*",
@@ -55,6 +56,7 @@
         "*://filebonus.net/*",
         "*://www.filebonus.net/*",
         "*://*.udemy.com/*",
+        "*://*.moddingunited.xyz/*",
         "*://*.filebonus.net/*",
         "*://*.udemy.com/*",
         "*://*.couponscorpion.com/*",
