@@ -4,6 +4,12 @@ that Auto redirects page of coupon site to udemy site With little to no interact
 
 might work on some sites also might not work if website had major/minor website redesign 
 
+### Bookmarklet
+--> for coursevania
+```javascript
+javascript:window.location.assign(document.getElementsByClassName("no-price")[0]["href"]);
+```
+
 #### Currently Updating/Fixing and being worked at the time being
 #### To Install download repo -> extract files and enable chrome extension dev mode and drag and drop extracted folder into chrome://extensions after enabling chrome extension dev mode
 
