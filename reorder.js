@@ -1,3 +1,6 @@
+const delay = (ms) => new Promise((res) => setTimeout(res, ms));
+
+
 function reorder(url) {
   //matches url with website address
   switch (url) {
@@ -7,11 +10,17 @@ function reorder(url) {
     case "coursevania.com":
       coursevania();
       break;
+    case "zapcourses.com":
+      zapcourses();
+      break;
     case "icontricks.tech":
       icontricks();
       break;
     case "udemy.com":
       udemy();
+      break;
+    case "studybullet.com":
+      studybullet();
       break;
     case "couponscorpion.com":
       getcouponscorpion();
@@ -25,25 +34,133 @@ function reorder(url) {
     case "zerocost.co.in":
       zerocost();
       break;
+    case "coursesity.com":
+      coursesity();
+      break;
+    case "gofreeebooks.in":
+      gofreeebooks();
+      break;
+    case "coursesbits.com":
+      coursesbits();
+      break;
+    case "findmycourse.in":
+      findmycourse();
+      break;
+    case "google.com":
+      google();
+      break;
     default:
       break;
   }
 }
-function getcouponscorpion() {
-  //couponscorpion.com
-  setTimeout(8000);
-  coupon = document.querySelector(
-    "#post-171638 > div.disablemobileborder.single_top_postproduct.pt20.pb20.border-top.border-grey-bottom.mb30.flowhidden.clearfix > div.right_st_postproduct.floatright.mobileblockdisplay > div > span.rh_button_wrapper > a"
+
+function findmycourse() {
+  console.log("Hello");
+  setTimeout(function () {
+    console.log("in timeout");
+    setTimeout(3000);
+    udemyurl = document.getElementsByClassName(
+      "bg-indigo-600 my-4 w-full text-center hover:bg-indigo-700 text-white py-2 px-4 rounded-lg inline-block transition duration-200"
+    )[0].href;
+    window.location.assign(udemyurl);
+    console.log(udemyurl);
+  }, 3000);
+  /* var url = window.location.href;
+  var url_array = url.split("/");
+  // output is ['https:', '', 'icontricks.tech', '']
+  //console.log(url_array);
+
+  var basicurl = url_array[2];
+  //output should be icontricks.tech;
+  //console.log(basicurl);
+
+  if ((url_array[2] == "findmycourse.in") & (url_array[3] == "course")) {
+    //alert("executing.......");
+    udemyurl = document.getElementsByClassName("bg-indigo-600 my-4 w-full text-center hover:bg-indigo-700 text-white py-2 px-4 rounded-lg inline-block transition duration-200")[0].href;
+    window.location.assign(udemyurl);
+  } else {
+    alert("not executed");
+  } */
+}
+
+function studybullet() {
+  setTimeout(() => {
+    urled = document.getElementsByClassName("enroll_btn")[0].href;
+    //https://studybullet.com/enroll/?ZapPath=/course/intro-to-custom-building-blockchains-with-substrate/&amp;ZapUrl=https://www.udemy.com/course/intro-to-custom-building-blockchains-with-substrate/
+    urled.split("ZapUrl=");
+    window.location.assign(urled[1]);
+  }, 4000);
+  //<a class="enroll_btn" href="https://studybullet.com/enroll/?ZapPath=/course/intro-to-custom-building-blockchains-with-substrate/&amp;ZapUrl=https://www.udemy.com/course/intro-to-custom-building-blockchains-with-substrate/" target="_blank" rel="noopener">Enroll for Free</a>
+  urled = document.getElementsByClassName("enroll_btn");
+  //https://studybullet.com/enroll/?ZapPath=/course/intro-to-custom-building-blockchains-with-substrate/&amp;ZapUrl=https://www.udemy.com/course/intro-to-custom-building-blockchains-with-substrate/
+  urled.split("ZapUrl=");
+  window.location.assign(urled[1]);
+}
+
+function coursesbits() {
+  setTimeout(() => {
+    console.log("coursesbits redirecting");
+  }, 5000);
+  window.location.assign(
+    document.querySelector(
+      "body > div.course-page > div.grid-container > div > div.three > a"
+    ).href
   );
+}
+function zapcourses() {
+  setTimeout(() => {
+    window.location.assign(
+      document.getElementsByClassName("enroll_btn")[0]["href"]
+    );
+  }, 5000);
+  window.location.assign(
+    document.getElementsByClassName("enroll_btn")[0]["href"]
+  );
+}
+
+function getcouponscorpion() {
+  //setTimeout(8000);
+  // document.getElementsByClassName("font120 mt0 mb10 mobfont110 lineheight20 moblineheight15");
+
+  //couponscorpion.com
+  //setTimeout(() => {
+  //console.log("couponscorpion redirecting");
+  //}, 1000);
+
+  coupon = document.getElementsByClassName("btn_offer_block re_track_btn")[0][
+    "href"
+  ];
+  //document.querySelector(
+  //"#post-171638 > div.disablemobileborder.single_top_postproduct.pt20.pb20.border-top.border-grey-//bottom.mb30.flowhidden.clearfix > div.right_st_postproduct.floatright.mobileblockdisplay > div > //span.rh_button_wrapper > a"
+  //);
   if (coupon != null) {
-    window.location.assign(coupon["href"]);
+    console.log(coupon);
+    //window.location.assign(coupon["href"]);
   }
-  setTimeout(2000);
-  udemy();
+  //udemy();
+}
+
+function google() {
+  setTimeout(() => {
+    console.log("google redirecting");
+  }, 5000);
+  var url = window.location.href;
+  var originalurl =
+    "https://coursevania.com/courses/complete-inventory-management-in-microsoft-excel-tally-erp9/";
+  //                                                 ::://////               ///       ///                                                           ///
+  var string =
+    "https://www.google.com/search?q=https%3A%2F%2Fcoursevania.com%2Fcourses%2Fcomplete-inventory-management-in-microsoft-excel-tally-erp9%2F&oq=https%3A%2F%2Fcoursevania.com%2Fcourses%2Fcomplete-inventory-management-in-microsoft-excel-tally-erp9%2F+&ie=UTF-8";
+  var substring =
+    "coursevania.com%2Fcourses%2Fcomplete-inventory-management-in-microsoft-excel-tally-erp9%2F&oq=https%3A%2F%2Fcoursevania.com%2Fcourses%2Fcomplete-inventory-management-in-microsoft-excel-tally-erp9%2F+&ie=UTF-8";
+  if (url.includes("coursevania.com")) {
+  }
 }
 
 function filebonus() {
   //filebonus.net
+  setTimeout(() => {
+    console.log("filebonus redirecting");
+  }, 5000);
   var firstredirect = document.querySelector(
     "#container > div > div.row > div > form > table > tbody > tr > td:nth-child(2) > center > input[type=submit]"
   );
@@ -65,7 +182,9 @@ function filebonus() {
 
 function allebook() {
   //all-ebook.info
-  setTimeout(1000);
+  setTimeout(() => {
+    console.log("all-ebook.info redirecting");
+  }, 5000);
   let href = document.querySelector(
     "#dle-content > article > div.screenshots-full > div.std-block-title2 > div > p > strong > a"
   );
@@ -74,6 +193,9 @@ function allebook() {
 
 function getintocourse() {
   //getintocourse.com
+  setTimeout(() => {
+    console.log("getintocourse redirecting");
+  }, 5000);
   let re_track_btn = document.getElementsByClassName("re_track_btn");
   let blank = document.getElementsByClassName("_blank");
   let free_course = document.getElementsByClassName(
@@ -114,42 +236,50 @@ function getintocourse() {
     console.log("nothing found");
   }
   setTimeout(2000);
-  udemy();
+  //udemy();
 }
 
 function udemy() {
-  setTimeout(5000);
-  console.log("udemy script started");
-  var go_to_course = document.querySelector(
-    "#udemy > div.main-content-wrapper > div.main-content > div.paid-course-landing-page__container > div.sidebar-container-position-manager > div > div > div > div.course-landing-page_slider-menu-container.sidebar-container--fixed--2xu7a > div > div.slider-menu--show-transactional-cta-container--1Xckm > div.slider-menu--cta-button--3eii3 > div > button"
-  ).innerHTML;
-  var enroll_btn = document.querySelector(
-    "#udemy > div.main-content-wrapper > div.main-content > div.paid-course-landing-page__container > div.sidebar-container-position-manager > div > div > div > div.course-landing-page_slider-menu-container > div > div.slider-menu--show-transactional-cta-container--1Xckm > div.slider-menu--cta-button--3eii3 > div > button > span"
-  );
-  if (butspan.innerHTML == "Enroll now") {
-    window.alert("Enroll now");
-  } else if (go_to_course.includes("Go to")) {
-    console.log("Go To Course Match Found ");
-    window.close();
-  }
+  setTimeout(function () {
+    console.log("udemy redirecting");
+    console.log("udemy script started");
+    var go_to_course = document.querySelector(
+      "#udemy > div.main-content-wrapper > div.main-content > div.paid-course-landing-page__container > div.sidebar-container-position-manager > div > div > div > div.course-landing-page_slider-menu-container.sidebar-container--fixed--2xu7a > div > div.slider-menu--show-transactional-cta-container--1Xckm > div.slider-menu--cta-button--3eii3 > div > button"
+    ).innerHTML;
+    var enroll_btn = document.querySelector(
+      "#udemy > div.main-content-wrapper > div.main-content > div.paid-course-landing-page__container > div.sidebar-container-position-manager > div > div > div > div.course-landing-page_slider-menu-container > div > div.slider-menu--show-transactional-cta-container--1Xckm > div.slider-menu--cta-button--3eii3 > div > button > span"
+    );
+    if (butspan.innerHTML == "Enroll now") {
+      window.alert("Enroll now");
+    } else if (go_to_course.includes("Go to")) {
+      console.log("Go To Course Match Found ");
+      window.close();
+    }
+  }, 7000);
 }
 
 function coursevania() {
   //coursevania.com
+  setTimeout(() => {
+    console.log("coursevania redirecting");
+    window.location.assign(
+      document.getElementsByClassName("no-price")[0]["href"]
+    );
+  }, 1000);
   window.location.assign(
     document.getElementsByClassName("no-price")[0]["href"]
   );
-  setTimeout(2000);
-  udemy();
 }
 
 function icontricks() {
   //icontricks.tech
   //checks if element exists by document.querySelector
-  function elementExists(selector) {
-    return document.querySelector(selector) !== null;
-  }
-
+  // function elementExists(selector) {
+  //   return document.querySelector(selector) !== null;
+  // }
+  setTimeout(() => {
+    console.log("icontricks.tech redirecting");
+  }, 5000);
   function getLink(el) {
     var link = el.getAttribute("href");
     return link;
@@ -169,9 +299,12 @@ function icontricks() {
     }
   }
   setTimeout(2000);
-  udemy();
+  //udemy();
 }
 function zerocost() {
+  setTimeout(() => {
+    console.log("zerocost.co.in redirecting");
+  }, 5000);
   //zerocost.co.in
   //checks if element exists by document.querySelector
   function elementExists(selector) {
@@ -223,7 +356,7 @@ function zerocost() {
     "#post-1150 > div.post-content > center > button > a",
   ];
   var numbers = [];
-  for (var i = 1000; i <= 5000; i++) {
+  for (var i = 1000; i <= 15000; i++) {
     numbers.push(i);
     selectors.push("#post-" + i + " > div.post-content > center > button > a");
   }
@@ -237,5 +370,59 @@ function zerocost() {
     }
   }
   setTimeout(2000);
-  udemy();
+  //udemy();
+}
+function gofreeebooks() {
+  //zerocost.co.in
+  setTimeout(() => {
+    console.log("gofreeebooks redirecting");
+  }, 5000);
+  //checks if element exists by document.querySelector
+  function elementExists(selector) {
+    return document.querySelector(selector) != null;
+  }
+
+  function getLink(el) {
+    var link = el.getAttribute("href");
+    return link;
+  }
+
+  var selectors = ["#post-1378 > div.post-content > center > button > a"];
+  var numbers = [];
+  for (var i = 0; i <= 5000; i++) {
+    numbers.push(i);
+    selectors.push(
+      "#post-" + i + " > div.entry-content.si-entry > center > button > a"
+    );
+  }
+  console.log(selectors);
+  console.log(numbers);
+
+  for (var i = 0; i < selectors.length; i++) {
+    if (elementExists(selectors[i])) {
+      console.log(selectors[i]);
+      window.location.assign(document.querySelector(selectors[i])["href"]);
+    }
+  }
+  setTimeout(2000);
+  //udemy();
+}
+
+function coursesity() {
+  setTimeout(() => {
+    console.log("coursesity redirecting");
+  }, 5000);
+  if (
+    elementExists(
+      "#course-detail-data > section > div > div:nth-child(1) > div.col-lg-12.no__padding > div > div > div.col-lg-4 > div > div"
+    )
+  ) {
+    window.location.assign(
+      document.getElementsByClassName("trial-btn1")[0].href
+    );
+  }
+}
+
+function elementExists(selector) {
+  return document.querySelector(selector) !== null;
 }

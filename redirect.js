@@ -9,10 +9,17 @@ var sites = [
   "coursevania.com",
   "getintocourse.com",
   "udemy.com",
+  "studybullet.com",
+  "findmycourse.in",
   "couponscorpion.com",
   "all-ebook.info",
   "filebonus.net",
   "zerocost.co.in",
+  "coursesity.com",
+  "gofreeebooks.in",
+  "google.com",
+  "coursesbits.com",
+  "zapcourses.com"
 ];
 
 for (var i = 0; i < sites.length; i++) {
