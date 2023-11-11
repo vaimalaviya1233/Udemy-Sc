@@ -1,33 +1,25 @@
 {
   "name": "Udemy Enroller",
-  "description": "Auto redirects page of coupon site to udemy site With little to no interaction of user",
-  "version": "2.0.1",
+  "description": "Auto redirects page of coupon site to udemy site",
+  "version": "1.3.5",
   "manifest_version": 3,
   "background": {
     "background.service_worker": [
-      "scripts/redirect.js",
-      "scripts/background.js",
-      "scripts/reorder.js"
+      "redirect.js",
+      "background.js",
+      "reorder.js"
     ]
   },
-  "permissions": [
-    "tabs",
-    "storage",
-    "activeTab",
-    "contextMenus"
-  ],
-  "options_page": "settings.html",
   "content_security_policy": {
-    "default-src": "script-src 'self' 'unsafe-eval' 'unsafe-inline' 'unsafe-hashes' 'redirect.js' 'reorder.js' 'background.js' 'strict-dynamic' 'nonce-BR0u7MF4TZtWJeZXXJv7d85O80dSH/ByufQAlErO3Fg=' 'unsafe-inline' https:",
-    "script-src": "script-src 'self' 'unsafe-eval' 'unsafe-inline' 'unsafe-hashes' 'redirect.js' 'reorder.js' 'background.js' 'strict-dynamic' 'nonce-BR0u7MF4TZtWJeZXXJv7d85O80dSH/ByufQAlErO3Fg=' 'unsafe-inline' https:",
-    "redirect.js": "script-src 'self' 'unsafe-eval' 'unsafe-inline' 'unsafe-hashes' 'strict-dynamic' 'nonce-BR0u7MF4TZtWJeZXXJv7d85O80dSH/ByufQAlErO3Fg=' 'unsafe-inline' https:",
-    "background.js": "script-src 'self' 'unsafe-eval' 'unsafe-inline' 'unsafe-hashes' 'strict-dynamic' 'nonce-BR0u7MF4TZtWJeZXXJv7d85O80dSH/ByufQAlErO3Fg=' 'unsafe-inline' https:",
-    "reorder.js": "script-src 'self' 'unsafe-eval' 'unsafe-inline' 'unsafe-hashes' 'strict-dynamic' 'nonce-BR0u7MF4TZtWJeZXXJv7d85O80dSH/ByufQAlErO3Fg=' 'unsafe-inline' https:"
+    "default-src": "script-src 'unsafe-inline' 'self' 'unsafe-hashes' 'self' 'wasm-unsafe-eval'",
+    "script-src": "script-src 'self' 'unsafe-eval' 'unsafe-inline' 'unsafe-hashes' 'redirect.js' 'reorder.js' 'background.js' 'unsafe-hashes' 'self' 'wasm-unsafe-eval'",
+    "redirect.js": "script-src 'self' 'unsafe-eval' 'unsafe-inline' 'unsafe-hashes' 'unsafe-inline' 'unsafe-hashes' 'self' 'wasm-unsafe-eval'",
+    "background.js": "script-src 'self' 'unsafe-eval' 'unsafe-inline' 'unsafe-hashes''nsafe-inline' 'unsafe-hashes' 'self' 'wasm-unsafe-eval'",
+    "reorder.js": "script-src 'self' 'unsafe-eval' 'unsafe-inline' 'unsafe-hashes' 'nsafe-inline' 'unsafe-hashes' 'self' 'wasm-unsafe-eval'"
   },
   "host_permissions": [
     "https://extension.ninja/*",
-    "https://*.udemy.com/*",
-    "https://*.coursesbits.com/*",
+    "https://www.udemy.com/*",
     "https://www.getintocourse.com/*",
     "https://www.coursevania.com/*",
     "https://www.couponscorpion.com/*",
@@ -37,54 +29,54 @@
     "http://www.zerocost.co.in/*",
     "http://*.gofreeebooks.in/*",
     "https://*.coursesity.com/course-detail/*",
-    "*://*.google.com/*",
-    "*://*.moddingunited.xyz/*",
-    "*://*.zapcourses.com/*",
+    "https://*.google.com/*",
+    "https://*.studybullet.com/*",
     "https://*.zapcourses.com/*",
-    "https://www.zapcourses.com/*",
-    "https://www.icontricks.tech/*",
-    "*://*.studybullet.com/*"
+    "https://*.findmycourse.in/course/*",
+    "https://*.coursesbits.com/*",
+    "https://www.icontricks.tech/*"
   ],
-  "icons": {
-    "16": "/images/chill_16.png",
-    "32": "/images/chill_32.png",
-    "48": "/images/chill_48.png",
-    "128": "/images/chill_128.png"
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "/images/get_started16.png",
+      "32": "/images/get_started32.png",
+      "48": "/images/get_started48.png",
+      "128": "/images/get_started128.png"
+    }
   },
+  "icons": {
+    "16": "/images/get_started16.png",
+    "32": "/images/get_started32.png",
+    "48": "/images/get_started48.png",
+    "128": "/images/get_started128.png"
+  },
+  "options_page": "options.html",
   "content_scripts": [
     {
       "matches": [
         "*://filebonus.net/*",
         "*://www.filebonus.net/*",
-        "*://*.udemy.com/*",
-        "*://*.moddingunited.xyz/*",
-        "*://*.coursesbits.com/*",
+        "*://www.udemy.com/*",
         "*://*.filebonus.net/*",
         "*://*.udemy.com/*",
+        "*://*.studybullet.com/*",
+        "*://*.zapcourses.com/*",
         "*://*.couponscorpion.com/*",
         "*://*.icontricks.tech/*",
         "*://*.all-ebook.info/*",
         "*://*.getintocourse.com/*",
         "*://*.zerocost.co.in/*",
         "*://*.gofreeebooks.in/*",
-        "*://*.coursesity.com/course-detail/*",
-        "*://*.coursevania.com/*",
-        "*://*.zapcourses.com/*",
-        "*://*.studybullet.com/*"
-      ],
-      "js": [
-        "scripts/reorder.js",
-        "scripts/redirect.js"
-      ],
-      "run_at": "document_end"
-    },{
-      "matches": [
         "*://*.google.com/*",
-        "*://*.google.com/*"
+        "*://*.findmycourse.in/course/*",
+        "*://*.coursesbits.com/*",
+        "*://*.coursesity.com/course-detail/*",
+        "*://*.coursevania.com/*"
       ],
       "js": [
-        "scripts/reorder.js",
-        "scripts/redirect.js"
+        "reorder.js",
+        "redirect.js"
       ],
       "run_at": "document_end"
     }

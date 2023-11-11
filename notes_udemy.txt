@@ -1,0 +1,17 @@
+<span>Enroll now</span> under  innerHTML
+document.getElementsByClassName("ud-btn ud-btn-large ud-btn-primary ud-heading-md ")
+Enroll now under innerText
+
+document.getElementsByClassName("ud-btn ud-btn-large ud-btn-primary ud-heading-md ")
+[0].innerText = "Enroll now"
+
+
+
+function wait(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+// async function changeText() {
+
+wait(5000).then(() => {
+  // do something after 5 seconds
+});

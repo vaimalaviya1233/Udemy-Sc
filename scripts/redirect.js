@@ -6,10 +6,11 @@ var basicurl = url_array[2]; //output should be icontricks.tech;
 // var absolutesite = ["https://icontricks.tech/", "https://coursevania.com", "https://getintocourse.com/"];
 var sites = [
   "icontricks.tech",
-  "coursesbits.com",
   "coursevania.com",
   "getintocourse.com",
   "udemy.com",
+  "studybullet.com",
+  "findmycourse.in",
   "couponscorpion.com",
   "all-ebook.info",
   "filebonus.net",
@@ -17,13 +18,12 @@ var sites = [
   "coursesity.com",
   "gofreeebooks.in",
   "google.com",
-  "zapcourses.com",
-  "studybullet.com",
-  "moddingunited.xyz"
+  "coursesbits.com",
+  "zapcourses.com"
 ];
 
 for (var i = 0; i < sites.length; i++) {
-  if (basicurl.includes(sites[i])) {// params (sites[i] == basicurl)
+  if (sites[i] == basicurl) {
     reorder(sites[i]);
   }
 }
