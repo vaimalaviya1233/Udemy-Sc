@@ -1,0 +1,42 @@
+  "background": {
+    "service_worker": "background.js"
+  },
+  for manifest under manifest version
+  under background 
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting",
+    "*://*.coursevania.com/*",
+    "*://*.couponscorpion.com/*",
+    "*://*.icontricks.tech/*",
+    "*://*.udemy.com/*",
+    "*://*.getintocourse.com/*",
+    "*://*.udemy.com/*",
+    "*://www.udemy.com/*"
+  ],
+
+
+  var aTags = document.getElementsByTagName("button");
+var searchText = "Enroll now";
+var found;
+
+for (var i = 0; i < aTags.length; i++) {
+  if (aTags[i].textContent == searchText) {
+    found = aTags[i];
+    break;
+  }
+}
+
+
+var buttons = document.getElementsByTagName('button');
+var searchText = "Enroll now";
+var found;
+for (var i = 0; i < aTags.length; i++) {
+  if (buttons[i].outerText == searchText) {
+    found = buttons[i];
+    console.log(buttons[i]);
+    found.click();
+    break;
+  }
+}
