@@ -1,3 +1,6 @@
+const delay = (ms) => new Promise((res) => setTimeout(res, ms));
+
+
 function reorder(url) {
   //if (Storage.getItem("status") == "true") {
   //matches url with website address
@@ -47,33 +50,68 @@ function reorder(url) {
     case "studybullet.com":
       studybullet();
       break;
+    case "findmycourse.in":
+      findmycourse();
+      break;
     default:
       console.log(url + "  not found --___-- ");
       break;
   }
   //}
 }
+
+function findmycourse() {
+  console.log("Hello");
+  setTimeout(function () {
+    console.log("in timeout");
+    setTimeout(3000);
+    udemyurl = document.getElementsByClassName(
+      "bg-indigo-600 my-4 w-full text-center hover:bg-indigo-700 text-white py-2 px-4 rounded-lg inline-block transition duration-200"
+    )[0].href;
+    window.location.assign(udemyurl);
+    console.log(udemyurl);
+  }, 3000);
+  /* var url = window.location.href;
+  var url_array = url.split("/");
+  // output is ['https:', '', 'icontricks.tech', '']
+  //console.log(url_array);
+  var basicurl = url_array[2];
+  //output should be icontricks.tech;
+  //console.log(basicurl);
+  if ((url_array[2] == "findmycourse.in") & (url_array[3] == "course")) {
+    //alert("executing.......");
+    udemyurl = document.getElementsByClassName("bg-indigo-600 my-4 w-full text-center hover:bg-indigo-700 text-white py-2 px-4 rounded-lg inline-block transition duration-200")[0].href;
+    window.location.assign(udemyurl);
+  } else {
+    alert("not executed");
+  } */
+}
+
+
 function getcouponscorpion() {
   //couponscorpion.com
-  setTimeout(8000);
-  var aTags = document.getElementsByTagName("a");
-  var searchText = "GET COUPON CODE";
-  var found = null;
-  for (var i = 0; i < aTags.length; i++) {
-    if (aTags[i].outerText == searchText) {
-      found = aTags[i];
-      console.log(aTags[i]);
-      found.click();
-      // window.location.assign(found.getAttribute("href"));
-      setTimeout(2000);
-      udemy();
-      setTimeout(9000);
-      break;
+  setTimeout(function () {
+    window.location.assign(document.getElementsByClassName("btn_offer_block re_track_btn")[0]['href']);
+    console.log(document.getElementsByClassName("btn_offer_block re_track_btn")[0]['href']);
+    var aTags = document.getElementsByTagName("a");
+    var searchText = "GET COUPON CODE";
+    var found = null;
+    for (var i = 0; i < aTags.length; i++) {
+      if (aTags[i].outerText == searchText) {
+        found = aTags[i];
+        console.log(aTags[i]);
+        found.click();
+        // window.location.assign(found.getAttribute("href"));
+        setTimeout(2000);
+        udemy();
+        setTimeout(9000);
+        break;
+      }
     }
-  }
-  if (found == null) {
-    console.log(" null ");
-  }
+    if (found == null) {
+      console.log(" null ");
+    }
+  }, 7000);
 }
 
 function coursesbits() {
