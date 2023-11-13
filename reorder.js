@@ -126,10 +126,17 @@ function getcouponscorpion() {
   //setTimeout(() => {
   //console.log("couponscorpion redirecting");
   //}, 1000);
+  setTimeout(function () {
+    coupon = document.getElementsByClassName("btn_offer_block re_track_btn")[0]["href"];
+    console.log(coupon);
+    if (coupon != null) {
+      window.location.assign(coupon);
+    }
+    window.location.assign(document.getElementsByClassName("btn_offer_block re_track_btn")[0]['href']);
+  }, 7000);
 
-  coupon = document.getElementsByClassName("btn_offer_block re_track_btn")[0][
-    "href"
-  ];
+
+  coupon = document.getElementsByClassName("btn_offer_block re_track_btn")[0]["href"];
   //document.querySelector(
   //"#post-171638 > div.disablemobileborder.single_top_postproduct.pt20.pb20.border-top.border-grey-//bottom.mb30.flowhidden.clearfix > div.right_st_postproduct.floatright.mobileblockdisplay > div > //span.rh_button_wrapper > a"
   //);
