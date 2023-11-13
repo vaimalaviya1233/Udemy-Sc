@@ -93,7 +93,7 @@ function getcouponscorpion() {
   setTimeout(function () {
     window.location.assign(document.getElementsByClassName("btn_offer_block re_track_btn")[0]['href']);
     console.log(document.getElementsByClassName("btn_offer_block re_track_btn")[0]['href']);
-    var aTags = document.getElementsByTagName("a");
+    /* var aTags = document.getElementsByTagName("a");
     var searchText = "GET COUPON CODE";
     var found = null;
     for (var i = 0; i < aTags.length; i++) {
@@ -110,7 +110,7 @@ function getcouponscorpion() {
     }
     if (found == null) {
       console.log(" null ");
-    }
+    } */
   }, 7000);
 }
 
