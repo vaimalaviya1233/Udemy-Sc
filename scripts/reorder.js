@@ -250,7 +250,8 @@ function coursevania() {
     )
   ) {
     window.location.assign(
-      document.getElementsByClassName("no-price")[0]["href"]
+      document.getElementsByClassName("masterstudy-button-affiliate__link")[0].href // new website design
+      // document.getElementsByClassName("no-price")[0]["href"] // old website design
     );
     udemy();
   }
