@@ -7,7 +7,7 @@ might work on some sites also might not work if website had major/minor website 
 ### Bookmarklet
 --> for coursevania
 ```javascript
-javascript:window.location.assign(document.getElementsByClassName("no-price")[0]["href"]);
+javascript:window.location.assign(document.getElementsByClassName("masterstudy-button-affiliate__link")[0]["href"]);
 ```
 
 #### Currently Updating/Fixing and being worked at the time being
