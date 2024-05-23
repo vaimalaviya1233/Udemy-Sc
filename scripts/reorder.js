@@ -2,7 +2,6 @@ const delay = (ms) => new Promise((res) => setTimeout(res, ms));
 
 
 function reorder(url) {
-  //if (Storage.getItem("status") == "true") {
   //matches url with website address
   switch (url) {
     case "getintocourse.com":
@@ -11,14 +10,17 @@ function reorder(url) {
     case "coursevania.com":
       coursevania();
       break;
-    case "coursesbits.com":
-      coursesbits();
+    case "zapcourses.com":
+      zapcourses();
       break;
     case "icontricks.tech":
       icontricks();
       break;
     case "udemy.com":
       udemy();
+      break;
+    case "studybullet.com":
+      studybullet();
       break;
     case "couponscorpion.com":
       getcouponscorpion();
@@ -38,26 +40,18 @@ function reorder(url) {
     case "gofreeebooks.in":
       gofreeebooks();
       break;
-    case "google.com":
-      google();
-      break;
-    case "zapcourses.com":
-      zapcourses();
-      break;
-    case "moddingunited.xyz":
-      moddingunited();
-      break;
-    case "studybullet.com":
-      studybullet();
+    case "coursesbits.com":
+      coursesbits();
       break;
     case "findmycourse.in":
       findmycourse();
       break;
+    case "google.com":
+      google();
+      break;
     default:
-      console.log(url + "  not found --___-- ");
       break;
   }
-  //}
 }
 
 function findmycourse() {
@@ -75,9 +69,11 @@ function findmycourse() {
   var url_array = url.split("/");
   // output is ['https:', '', 'icontricks.tech', '']
   //console.log(url_array);
+
   var basicurl = url_array[2];
   //output should be icontricks.tech;
   //console.log(basicurl);
+
   if ((url_array[2] == "findmycourse.in") & (url_array[3] == "course")) {
     //alert("executing.......");
     udemyurl = document.getElementsByClassName("bg-indigo-600 my-4 w-full text-center hover:bg-indigo-700 text-white py-2 px-4 rounded-lg inline-block transition duration-200")[0].href;
@@ -87,89 +83,91 @@ function findmycourse() {
   } */
 }
 
-
-function getcouponscorpion() {
-  //couponscorpion.com
-  setTimeout(function () {
-    window.location.assign(document.getElementsByClassName("btn_offer_block re_track_btn")[0]['href']);
-    console.log(document.getElementsByClassName("btn_offer_block re_track_btn")[0]['href']);
-    /* var aTags = document.getElementsByTagName("a");
-    var searchText = "GET COUPON CODE";
-    var found = null;
-    for (var i = 0; i < aTags.length; i++) {
-      if (aTags[i].outerText == searchText) {
-        found = aTags[i];
-        console.log(aTags[i]);
-        found.click();
-        // window.location.assign(found.getAttribute("href"));
-        setTimeout(2000);
-        udemy();
-        setTimeout(9000);
-        break;
-      }
-    }
-    if (found == null) {
-      console.log(" null ");
-    } */
-  }, 7000);
+function studybullet() {
+  setTimeout(() => {
+    urled = document.getElementsByClassName("enroll_btn")[0].href;
+    //https://studybullet.com/enroll/?ZapPath=/course/intro-to-custom-building-blockchains-with-substrate/&amp;ZapUrl=https://www.udemy.com/course/intro-to-custom-building-blockchains-with-substrate/
+    urled.split("ZapUrl=");
+    window.location.assign(urled[1]);
+  }, 4000);
+  //<a class="enroll_btn" href="https://studybullet.com/enroll/?ZapPath=/course/intro-to-custom-building-blockchains-with-substrate/&amp;ZapUrl=https://www.udemy.com/course/intro-to-custom-building-blockchains-with-substrate/" target="_blank" rel="noopener">Enroll for Free</a>
+  urled = document.getElementsByClassName("enroll_btn");
+  //https://studybullet.com/enroll/?ZapPath=/course/intro-to-custom-building-blockchains-with-substrate/&amp;ZapUrl=https://www.udemy.com/course/intro-to-custom-building-blockchains-with-substrate/
+  urled.split("ZapUrl=");
+  window.location.assign(urled[1]);
 }
 
 function coursesbits() {
-  document.getElementById("enroll").click();
+  setTimeout(() => {
+    console.log("coursesbits redirecting");
+  }, 5000);
+  window.location.assign(
+    document.querySelector(
+      "body > div.course-page > div.grid-container > div > div.three > a"
+    ).href
+  );
+}
+function zapcourses() {
+  setTimeout(() => {
+    window.location.assign(
+      document.getElementsByClassName("enroll_btn")[0]["href"]
+    );
+  }, 5000);
+  window.location.assign(
+    document.getElementsByClassName("enroll_btn")[0]["href"]
+  );
+}
+
+function getcouponscorpion() {
+  //setTimeout(8000);
+  // document.getElementsByClassName("font120 mt0 mb10 mobfont110 lineheight20 moblineheight15");
+
+  //couponscorpion.com
+  //setTimeout(() => {
+  //console.log("couponscorpion redirecting");
+  //}, 1000);
+  setTimeout(function () {
+    coupon = document.getElementsByClassName("btn_offer_block re_track_btn")[0]["href"];
+    console.log(coupon);
+    if (coupon != null) {
+      window.location.assign(coupon);
+    }
+    window.location.assign(document.getElementsByClassName("btn_offer_block re_track_btn")[0]['href']);
+  }, 7000);
+
+
+  coupon = document.getElementsByClassName("btn_offer_block re_track_btn")[0]["href"];
+  //document.querySelector(
+  //"#post-171638 > div.disablemobileborder.single_top_postproduct.pt20.pb20.border-top.border-grey-//bottom.mb30.flowhidden.clearfix > div.right_st_postproduct.floatright.mobileblockdisplay > div > //span.rh_button_wrapper > a"
+  //);
+  if (coupon != null) {
+    console.log(coupon);
+    //window.location.assign(coupon["href"]);
+  }
+  //udemy();
 }
 
 function google() {
+  setTimeout(() => {
+    console.log("google redirecting");
+  }, 5000);
   var url = window.location.href;
+  var originalurl =
+    "https://coursevania.com/courses/complete-inventory-management-in-microsoft-excel-tally-erp9/";
+  //                                                 ::://////               ///       ///                                                           ///
+  var string =
+    "https://www.google.com/search?q=https%3A%2F%2Fcoursevania.com%2Fcourses%2Fcomplete-inventory-management-in-microsoft-excel-tally-erp9%2F&oq=https%3A%2F%2Fcoursevania.com%2Fcourses%2Fcomplete-inventory-management-in-microsoft-excel-tally-erp9%2F+&ie=UTF-8";
+  var substring =
+    "coursevania.com%2Fcourses%2Fcomplete-inventory-management-in-microsoft-excel-tally-erp9%2F&oq=https%3A%2F%2Fcoursevania.com%2Fcourses%2Fcomplete-inventory-management-in-microsoft-excel-tally-erp9%2F+&ie=UTF-8";
   if (url.includes("coursevania.com")) {
-    console.log(
-      url
-        .slice(url.indexOf("coursevania"), url.indexOf("&"))
-        .replaceAll("%3A", ":")
-        .replaceAll("%2F", "/")
-    );
-    var reworked = url
-      .slice(url.indexOf("coursevania.com"))
-      .replaceAll("%3A", ":")
-      .replaceAll("%2F", "/");
-    window.location.replace(
-      "https://" +
-        url
-          .slice(url.indexOf("coursevania"), url.indexOf("&"))
-          .replaceAll("%3A", ":")
-          .replaceAll("%2F", "/")
-    );
-  }
-  if (url.includes("coursesora.com")) {
-    console.log(
-      url.slice(url.slice(url.indexOf("coursesora", url.indexOf(""))))
-    );
-    var reworked = url.slice(url.indexOf("coursesora", url.indexOf("")));
-    window.location.replace(
-      "https://" + url.slice(url.indexOf("coursesora", url.indexOf("")))
-    );
-  }
-  if (url.includes("zapcourses.com")) {
-    console.log(
-      url.slice(url.slice(url.indexOf("zapcourses", url.indexOf(""))))
-    );
-    var reworked = url.slice(url.indexOf("zapcourses", url.indexOf("")));
-    window.location.replace(
-      "https://" + url.slice(url.indexOf("zapcourses", url.indexOf("")))
-    );
-  }
-  if (url.includes("studybullet.com")) {
-    console.log(
-      url.slice(url.slice(url.indexOf("studybullet", url.indexOf(""))))
-    );
-    var reworked = url.slice(url.indexOf("studybullet", url.indexOf("")));
-    window.location.replace(
-      "https://" + url.slice(url.indexOf("studybullet", url.indexOf("")))
-    );
   }
 }
 
 function filebonus() {
   //filebonus.net
+  setTimeout(() => {
+    console.log("filebonus redirecting");
+  }, 5000);
   var firstredirect = document.querySelector(
     "#container > div > div.row > div > form > table > tbody > tr > td:nth-child(2) > center > input[type=submit]"
   );
@@ -191,7 +189,9 @@ function filebonus() {
 
 function allebook() {
   //all-ebook.info
-  setTimeout(1000);
+  setTimeout(() => {
+    console.log("all-ebook.info redirecting");
+  }, 5000);
   let href = document.querySelector(
     "#dle-content > article > div.screenshots-full > div.std-block-title2 > div > p > strong > a"
   );
@@ -200,6 +200,9 @@ function allebook() {
 
 function getintocourse() {
   //getintocourse.com
+  setTimeout(() => {
+    console.log("getintocourse redirecting");
+  }, 5000);
   let re_track_btn = document.getElementsByClassName("re_track_btn");
   let blank = document.getElementsByClassName("_blank");
   let free_course = document.getElementsByClassName(
@@ -239,22 +242,41 @@ function getintocourse() {
     alert("non exist");
     console.log("nothing found");
   }
-  udemy();
+  setTimeout(2000);
+  //udemy();
+}
+
+function udemy() {
+  setTimeout(function () {
+    console.log("udemy redirecting");
+    console.log("udemy script started");
+    var go_to_course = document.querySelector(
+      "#udemy > div.main-content-wrapper > div.main-content > div.paid-course-landing-page__container > div.sidebar-container-position-manager > div > div > div > div.course-landing-page_slider-menu-container.sidebar-container--fixed--2xu7a > div > div.slider-menu--show-transactional-cta-container--1Xckm > div.slider-menu--cta-button--3eii3 > div > button"
+    ).innerHTML;
+    var enroll_btn = document.querySelector(
+      "#udemy > div.main-content-wrapper > div.main-content > div.paid-course-landing-page__container > div.sidebar-container-position-manager > div > div > div > div.course-landing-page_slider-menu-container > div > div.slider-menu--show-transactional-cta-container--1Xckm > div.slider-menu--cta-button--3eii3 > div > button > span"
+    );
+    if (butspan.innerHTML == "Enroll now") {
+      window.alert("Enroll now");
+    } else if (go_to_course.includes("Go to")) {
+      console.log("Go To Course Match Found ");
+      window.close();
+    }
+  }, 7000);
 }
 
 function coursevania() {
   //coursevania.com
-  if (
-    elementExists(
-      "#main > div > div > div > div.col-md-4.col-sm-5.udemy-sidebar-holder > div.stm-lms-course__sidebar-holder > div > div.stm_lms_udemy__affiliate_btn > div > a"
-    )
-  ) {
-    window.location.assign(
-      document.getElementsByClassName("masterstudy-button-affiliate__link")[0].href // new website design
-      // document.getElementsByClassName("no-price")[0]["href"] // old website design
-    );
-    udemy();
-  }
+  setTimeout(() => {
+
+    var udemy_url = document.getElementsByClassName("masterstudy-button-affiliate__link")[0].href // new website design
+    // document.getElementsByClassName("no-price")[0]["href"] // old website design
+    console.log("coursevania redirecting - " + udemy_url);
+    window.location.assign(udemy_url);
+  }, 1000);
+  window.location.assign(
+    document.getElementsByClassName("no-price")[0]["href"]
+  );
 }
 
 function icontricks() {
@@ -263,53 +285,20 @@ function icontricks() {
   // function elementExists(selector) {
   //   return document.querySelector(selector) !== null;
   // }
-
-  /* function getLink(el) {
-    var link = el.getAttribute("href");
-    return link;
-  }
-
-  var selectors = [
-    "#the-post > div.entry-content.entry.clearfix > center > button > a",
-    "#the-post > div.entry-content.entry.clearfix > center > button > a",
-    "#the-post > div.entry-content.entry.clearfix > center > button > a",
-    "#the-post > div.entry-content.entry.clearfix > center > button > a",
-    "#post-5220 > div.article-content.clearfix > div.entry-content.clearfix > center > button > a",
-    "#post-5223 > div.article-content.clearfix > div.entry-content.clearfix > center > button > a",
-  ];
-
-  for (var i = 0; i < selectors.length; i++) {
-    if (elementExists(selectors[i])) {
-      console.log(selectors[i]);
-      window.location.assign(document.querySelector(selectors[i])["href"]);
-    }
-  }
-  udemy(); */
-
-  function elementExists(selector) {
-    return document.querySelector(selector) != null;
-  }
-
+  setTimeout(() => {
+    console.log("icontricks.tech redirecting");
+  }, 5000);
   function getLink(el) {
     var link = el.getAttribute("href");
     return link;
   }
 
   var selectors = [
-    "#post-1378 > div.article-content.clearfix > div.entry-content.clearfix > center > button > a",
+    "#the-post > div.entry-content.entry.clearfix > center > button > a",
+    "#the-post > div.entry-content.entry.clearfix > center > button > a",
+    "#the-post > div.entry-content.entry.clearfix > center > button > a",
+    "#the-post > div.entry-content.entry.clearfix > center > button > a",
   ];
-  var numbers = [];
-  for (var i = 0; i <= 12000; i++) {
-    numbers.push(i);
-    selectors.push(
-      "#post-" +
-        i +
-        " > div.article-content.clearfix > div.entry-content.clearfix > center > button > a"
-    );
-    //"#post-5220 > div.article-content.clearfix > div.entry-content.clearfix > center > button > a"
-  }
-  console.log(selectors);
-  console.log(numbers);
 
   for (var i = 0; i < selectors.length; i++) {
     if (elementExists(selectors[i])) {
@@ -318,9 +307,12 @@ function icontricks() {
     }
   }
   setTimeout(2000);
-  udemy();
+  //udemy();
 }
 function zerocost() {
+  setTimeout(() => {
+    console.log("zerocost.co.in redirecting");
+  }, 5000);
   //zerocost.co.in
   //checks if element exists by document.querySelector
   function elementExists(selector) {
@@ -333,11 +325,46 @@ function zerocost() {
   }
 
   var selectors = [
+    "#post-1378 > div.post-content > center > button > a",
+    "#post-1372 > div.post-content > center > button > a",
+    "#post-1374 > div.post-content > center > button > a",
+    "#post-1386 > div.post-content > center > button > a",
+    "#post-1388 > div.post-content > center > button > a",
+    "#post-1390 > div.post-content > center > button > a",
+    "#post-1394 > div.post-content > center > button > a",
+    "#post-1392 > div.post-content > center > button > a",
+    "#post-1144 > div.post-content > center > button > a",
+    "#post-1228 > div.post-content > center > button > a",
+    "#post-1232 > div.post-content > center > button > a",
+    "#post-1234 > div.post-content > center > button > a",
+    "#post-1238 > div.post-content > center > button > a",
+    "#post-1242 > div.post-content > center > button > a",
+    "#post-1247 > div.post-content > center > button > a",
+    "#post-1245 > div.post-content > center > button > a",
+    "#post-1249 > div.post-content > center > button > a",
+    "#post-1251 > div.post-content > center > button > a",
+    "#post-1253 > div.post-content > center > button > a",
+    "#post-1148 > div.post-content > center > button > a",
+    "#post-1152 > div.post-content > center > button > a",
+    "#post-1171 > div.post-content > center > button > a",
+    "#post-1173 > div.post-content > center > button > a",
+    "#post-1159 > div.post-content > center > button > a",
+    "#post-1161 > div.post-content > center > button > a",
+    "#post-1165 > div.post-content > center > button > a",
+    "#post-1167 > div.post-content > center > button > a",
+    "#post-1169 > div.post-content > center > button > a",
+    "#post-1155 > div.post-content > center > button > a",
+    "#post-1157 > div.post-content > center > button > a",
+    "#post-1179 > div.post-content > center > button > a",
+    "#post-1146 > div.post-content > center > button > a",
+    "#the-post > div.entry-content.entry.clearfix > center > button > a",
+    "#the-post > div.entry-content.entry.clearfix > center > button > a",
+    "#the-post > div.entry-content.entry.clearfix > center > button > a",
     "#the-post > div.entry-content.entry.clearfix > center > button > a",
     "#post-1150 > div.post-content > center > button > a",
   ];
   var numbers = [];
-  for (var i = 1000; i <= 5000; i++) {
+  for (var i = 1000; i <= 15000; i++) {
     numbers.push(i);
     selectors.push("#post-" + i + " > div.post-content > center > button > a");
   }
@@ -350,10 +377,14 @@ function zerocost() {
       window.location.assign(document.querySelector(selectors[i])["href"]);
     }
   }
-  udemy();
+  setTimeout(2000);
+  //udemy();
 }
 function gofreeebooks() {
   //zerocost.co.in
+  setTimeout(() => {
+    console.log("gofreeebooks redirecting");
+  }, 5000);
   //checks if element exists by document.querySelector
   function elementExists(selector) {
     return document.querySelector(selector) != null;
@@ -382,10 +413,13 @@ function gofreeebooks() {
     }
   }
   setTimeout(2000);
-  // udemy();
+  //udemy();
 }
 
 function coursesity() {
+  setTimeout(() => {
+    console.log("coursesity redirecting");
+  }, 5000);
   if (
     elementExists(
       "#course-detail-data > section > div > div:nth-child(1) > div.col-lg-12.no__padding > div > div > div.col-lg-4 > div > div"
@@ -395,132 +429,8 @@ function coursesity() {
       document.getElementsByClassName("trial-btn1")[0].href
     );
   }
-  udemy();
-}
-function studybullet() {
-  /* if (
-    elementExists("#post-41174 > div.entry-content.clr > div.button_cont > a")
-  ) {
-    window.location.assign(
-      document.getElementsByClassName("enroll_btn")[0].href
-    );
-  }
-  udemy(); */
-
-  var selectors = [
-    "#the-post > div.entry-content.entry.clearfix > center > button > a",
-    "#post-1150 > div.post-content > center > button > a",
-  ];
-  var numbers = [];
-  for (var i = 0; i <= 100000; i++) {
-    numbers.push(i);
-    selectors.push(
-      "#post-" + i + " > div.entry-content.clr > div.button_cont > a"
-    );
-  }
-  console.log(selectors);
-  console.log(numbers);
-
-  for (var i = 0; i < selectors.length; i++) {
-    if (elementExists(selectors[i])) {
-      console.log(selectors[i]);
-      window.location.assign(document.querySelector(selectors[i])["href"]);
-    }
-  }
 }
 
 function elementExists(selector) {
   return document.querySelector(selector) !== null;
-}
-
-function zapcourses() {
-  let enrollBtn = document.getElementsByClassName("enroll_btn");
-  // example redirect link: https://zapcourses.com/enroll/?path=/negotiation-skills-become-a-master-of-negotiation/&url=https://www.udemy.com/course/negotiation-how-to-craft-agreements-that-give-everyone-more-u/?couponCode=A414527A5B304F76092F
-  //make it redirect to the udemy link
-  //https://zapcourses.com/enroll/?ZapPath=/media-training-for-print-online-interviews-get-great-quotes/&ZapUrl=https://www.udemy.com/course/media-training-for-print-interviews-and-online-publications/?couponCode=666200FF37461759A861
-  if (enrollBtn.length > 0) {
-    let redirectLink = enrollBtn[0].href;
-    let udemyLink = redirectLink.split("ZapUrl=")[1];
-    console.log(udemyLink);
-    window.location.assign(udemyLink);
-    timeout(2000);
-    udemy();
-  }
-  //if (enrollBtn.length > 0) {
-  //  window.location.assign(enrollBtn[0].href);
-  //}
-}
-
-function moddingunited(){
-  var url = window.location;
-  var redirectLink = "";
-  //https://moddingunited.xyz/download/?elif/kpa.detinUgniddoM_0.01.8v_htamotohP/321bvg436b480w6/elif/moc.erifaidem.www//:sptth
-  //https://www.mediafire.com/file/6w084b634gvb123/Photomath_v8.10.0_ModdingUnited.apk/file
-  if((url.hostname === "moddingunited.xyz") && (url.pathname === "/download/")){
-    var redirectUnLink = url.search;
-    for(let i = redirectUnLink.length; i > 0; i-- ){
-      redirectLink += redirectUnLink.charAt(i-1);
-    }
-    console.log(redirectLink);
-    window.location.assign(redirectLink);
-  }
-}
-/* function udemy() {
-  setTimeout(5000);
-  var buttons = document.getElementsByTagName("button");
-  var searchText = "Enroll now";
-  var found = null;
-  for (var i = 0; i < buttons.length; i++) {
-    if (buttons[i].outerText == searchText) {
-      found = buttons[i];
-      console.log(buttons[i]);
-      // found.click();
-      break;
-    }
-  }
-  if (found == null) {
-    console.log(" null ");
-  }
-} */
-
-function udemy() {
-  window.setTimeout(5000);
-  var currunturl = window.location.href;
-  if (currunturl.includes("udemy.com/course/")) {
-    var buttons = document.getElementsByClassName(
-      "styles--btn--express-checkout--28jN4"
-    );
-    var innerValue = buttons[0].children[0].innerHTML;
-    if (innerValue == "Go to course" || innerValue == "Buy this course") {
-      window.close();
-    }
-    if (innerValue == "Enroll now" || innerValue != "Go to course") {
-      var buttons = document.getElementsByClassName(
-        "styles--btn--express-checkout--28jN4"
-      );
-      // redirect webpage from https://www.udemy.com/course/complete-unity-2d-megacourse-beginner-to-expert/?couponCode=544481A5D8FEB412ED80 which has course id in body tag in html to https://www.udemy.com/cart/checkout/express/course/4713448/?discountCode=544481A5D8FEB412ED80
-      //                       https://www.udemy.com/cart/checkout/express/course/4713448/?discountCode=544481A5D8FEB412ED80
-      var body = document.getElementsByTagName("body");
-      var courseid = body[0].getAttribute("data-clp-course-id");
-      var url = window.location.href;
-      var discountcode = url.slice(url.indexOf("couponCode=") + 11);
-      var newurl =
-        "https://www.udemy.com/cart/checkout/express/course/" +
-        courseid +
-        "/?discountCode=" +
-        discountcode;
-      console.log(newurl);
-      window.location.assign(newurl);
-    }
-  } else if (currunturl.includes("udemy.com/cart/checkout/express/course/")) {
-    window.setTimeout(5000);
-
-    //window.location.replace(newurl);
-    var checkout = document.getElementsByClassName(
-      "checkout-button--checkout-button--button--1S-XD"
-    );
-    if (checkout.length) {
-      checkout[0].click();
-    }
-  }
 }
