@@ -9,8 +9,6 @@ chrome.storage.local.get(
   }
 );
 
-document.getElementById("version").textContent = chrome.runtime.getManifest().version;
-
 document.querySelectorAll("input").forEach(function (element) {
   element.addEventListener("change", function () {
     chrome.storage.local.set(

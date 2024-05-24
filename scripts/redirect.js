@@ -21,10 +21,11 @@ var sites = [
   "coursesbits.com",
   "zapcourses.com"
 ];
-
-for (var i = 0; i < sites.length; i++) {
-  if (sites[i] == basicurl) {
-    reorder(sites[i]);
+if(data.settings.status){
+  for (var i = 0; i < sites.length; i++) {
+    if (sites[i] == basicurl) {
+      reorder(sites[i]);
+    }
   }
 }
 // var url_array_length = url_array.length;
